@@ -1,0 +1,611 @@
+/*css for hangman*/
+
+/*the canvas*/
+canvas{
+  color:#fff;
+  border: #fff dashed 2px;
+  padding:15px;
+}
+
+/*alphabet list*/
+.alphabet {
+  margin:15px auto;
+  background-color: #C4C4C4;
+  width: 800px;
+  border-radius: 4px;
+  padding: 10px;
+  border-left: 99px solid #C4C4C4;
+  border-right: 46px solid #C4C4C4;
+  border-top: 10px solid #C4C4C4;
+}
+
+/*alphabet characters*/
+.alphabet li {
+  display: inline-block;
+  list-style:none;
+  background-color: #FFFFFF;
+  color: #020335;
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 48px;
+  margin-right: 9px;
+  margin-bottom: 9px;
+  cursor: pointer;
+}
+
+/*characters already selected*/
+.active{
+  background-color: #020335 !important;
+  color: #FFFFFF !important;
+  cursor: default !important;
+}
+
+/*title row*/
+.hangmanCreateTitleRow{
+  margin-top: 45px;
+  width: 963px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -12px;
+}
+
+/*items to transparent*/
+#toTransparent{
+  background-color: #FFFFFF;
+  width: 200px;
+}
+
+/*left of title row*/
+#hangmanCreateTitleRowLeft{
+  display: inline;
+  border-spacing: 10px;
+}
+
+/*hangman icon*/
+#hangmanIconCreate{
+  width: 37px;
+  height: 37px;
+  border-radius: 4px;
+}
+
+/*titles*/
+#hangmanTitle2, #hangmanTitle{
+  font-size: 32px;
+  font-weight: bold;
+  height: 60px;
+  width: 750px;
+}
+
+/*exercise title*/
+#exerciseTitle{
+ font-size: 32px;
+ font-weight: bold;
+ width: 725px;
+ border-radius: 0;
+}
+
+/*title placeholder for firefox*/
+#exerciseTitle::-moz-placeholder{
+ font-style: italic;
+ font-weight: normal;
+ font-size: 25px;
+}
+
+/*title placeholder for opera, safari and chrome*/
+#exerciseTitle::-webkit-input-placeholder {
+ font-style: italic;
+ font-weight: normal;
+ font-size: 25px;
+}
+
+/*previous question button*/
+#prevQuestion {
+    margin-right: -15px;
+}
+
+/*arrows*/
+.arrowClass{
+ font-size: 48px;
+ cursor: pointer;
+ width: 40px;
+}
+
+/*quesiton numbers*/
+.questionNumberCreate{
+ font-size: 20px;
+ border: none
+}
+
+/*question numbers*/
+.questionNumberCreateNumber{
+ font-size: 16px;
+ width: 12px;
+ font-size: 16px;
+ background-color: rgba(0, 0, 0, 0);
+}
+
+#{
+ margin-left: -34px;
+}
+
+/*hangman backgorund*/
+.hangmanBackground{
+ background-color: #C4C4C4 ;
+ width: 963px;
+ height: 100px;
+ border-radius: 4px;
+ border-spacing: 10px;
+ margin-top: 12px;
+}
+
+/*feedback*/
+#feedback{
+  height: 40px;
+  border-radius: 4px;
+  width: 940px;
+  height: 80px;
+  vertical-align: top;
+  font-size: 20px;
+  border: none;
+}
+
+/*feedback*/
+.hangmanCreateFeedback{
+ background-color: #C4C4C4 ;
+ width: 966px;
+ height: 108px;
+ border-radius: 4px;
+ border-spacing: 10px;
+ margin-top: 12px;
+ font-size: 20px;
+}
+
+/*text area in hangman background*/
+.hangmanBackground input[type="textarea"]{
+  width: 938px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+/*smaller placeholders for forefox*/
+.smallPlaceholder::-moz-placeholder{
+ font-style: italic;
+ font-weight: normal;
+ font-size: 20px;
+}
+
+/*smaller placeholders for opera, safari and chrome*/
+.smallPlaceholder::-webkit-input-placeholder {
+ font-style: italic;
+ font-weight: normal;
+ font-size: 20px;
+}
+
+/*question area*/
+.questionArea{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*buttons row*/
+.buttonRow{
+  margin-right: auto;
+  margin-left: auto;
+  border-spacing: 30px;
+  margin-top: -10px;
+}
+
+/*left button*/
+#leftButton{
+  width:203px;
+}
+
+/*hangman question*/
+.hangmanAnswerQuestion{
+ margin-top: -14px;
+ background-color: #C4C4C4 ;
+ width: 963px;
+ height: 100px;
+ border-radius: 4px;
+ border-spacing: 10px;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+/*question number*/
+#questionNumberAnswer{
+ font-size: 18px;
+ width: 85px;
+}
+
+/*question to answer*/
+#question2{
+  background-color: #FFFFFF;
+  color: #020335;
+  height: 40px;
+  width: 922px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+/*question to answer*/
+.questionToAnswer{
+  height: 40px;
+}
+
+/*question number*/
+.questionNumberCreate{
+  width: 875px;
+}
+
+/*table containing the hangman image,
+the empty answer, the clue and the
+number of guesses left*/
+#playHangman{
+  display: inline-block;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 963px;
+  display: block;
+  border-spacing: 0;
+}
+
+/*holder*/
+#hold{
+  text-align: center;
+  margin-top: -20px;
+  border-top: 3px solid #c4c4c4;
+  border-left: 3px solid #c4c4c4;
+  border-top-left-radius: 4px;
+}
+
+/*holder list elements*/
+#hold li{
+  display: inline-block;
+  list-style:none;
+  background-color: #020335;
+  color: #FFFFFF;
+  width: 48px;
+  height: 48px;
+  border-radius: 4px;
+  text-align: center;
+  line-height: 48px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+/*word ti be guessed*/
+#my-word li {
+  list-style: none;
+  display: inline-block;
+}
+
+/*number of guesses left*/
+.guesses{
+ text-align: right;
+ width: 248px;
+ padding-right: 15px;
+ font-size: 18px;
+ color: #969696;
+ font-style: italic;
+}
+
+/*rounds the left of the table resultsTableRow*/
+.resultsTableRow td:nth-child(2){
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/*rounds the right of the table resultsTableRow*/
+.resultsTableRow td:nth-child(4){
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/*hangman image*/
+#hangmanImage{
+  width: 273px;
+  height: 273px;
+}
+
+/*container for hangman*/
+.container{
+  border-spacing: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -200px;
+}
+
+/*clue and feedback */
+.clue .feedback{
+  width: 963px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*tds in hangman container*/
+.container td{
+  width: 180px;
+}
+
+/*clue text*/
+.clue{
+  font-size: 18px;
+  width: 400px;
+  color: #969696;
+  font-style: italic;
+  padding-left: 15px;
+  height: 30px;
+  border-left: 3px solid #c4c4c4;
+}
+
+/*disabled letters*/
+.disabled{
+  pointer-events:none;
+	background-color: #020335 !important;
+	color: #FFFFFF !important;
+}
+
+/*disabled letters*/
+.disabled1{
+    pointer-events:none;
+}
+
+/*feedback in practice*/
+.feedback2{
+  border-radius: 4px;
+  background-color: #C4C4C4 ;
+  width: 966px;
+  border-radius: 4px;
+  border-spacing: 10px;
+  margin-top: 12px;
+  font-size: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*feedback field*/
+#feedbackAnswer{
+  white-space: pre-wrap;
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  width: 938px;
+  font-size: 20px;
+  border: 1px solid #FFFFFF;
+  resize: none;
+  min-height: 110px;
+}
+
+/*question numeber*/
+.questionNumberCreate{
+  font-size: 20px;
+  border: none;
+}
+
+/*tick and cross container*/
+.tickcross{
+  width: 35px;
+  height: 35px;
+}
+
+/*tick and cross image*/
+.tickcross img{
+  width: 35px;
+  height: 35px;
+}
+
+/*rounds the bottom of the table*/
+#bottomTD{
+  height: 1px;
+  border-bottom: 3px solid #c4c4c4;
+  border-left: 3px solid #c4c4c4;
+  border-bottom-left-radius: 4px;
+}
+
+/*rounds the right of the table*/
+#rightTD{
+  width: 1px;
+  border-right: 3px solid #c4c4c4;
+  border-top: 3px solid #c4c4c4;
+  border-bottom: 3px solid #c4c4c4;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/*next question button*/
+#nextQuestion{
+  margin-left: -20px;
+}
+
+/*buttons*/
+.buttons{
+  border: none;
+  height: 46px;
+  width: 220px;
+  border-radius: 4px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 42px;
+}
+
+/*hides question div*/
+.questionDiv{
+	display: none;
+}
+
+/*results summary tab*/
+.hangmanResultsTab{
+ background-color: #C4C4C4 ;
+ width: 963px;
+ border-radius: 4px;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 12px;
+}
+
+/*results summary tabs td padding*/
+.hangmanResultsTab td{
+ padding-left: 10px;
+}
+
+/*right answer width*/
+#rightAnswersTD{
+    width: 241px;
+}
+
+/*results table*/
+.hangmanResultsTable{
+ width: 963px;
+ background-color: #C4C4C4 ;
+ border-radius: 4px;
+ border-spacing: 0px;
+ margin-top: 12px;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+/*header of results table*/
+#header td{
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+
+/*results question*/
+#questionResultTD{
+    padding-left: 10px;
+}
+
+/*results row*/
+.resultsTableRow tr{
+    border: 1px solid red;
+}
+
+/*tds in results table rows*/
+.resultsTableRow td{
+ background-color: #FFFFFF ;
+ padding-left: 5px;
+ height: 40px;
+}
+
+/*hangman create page*/
+.hangmanCreatePage1{
+  margin: auto;
+  display: none;
+}
+
+/*padding */
+#paddingTD{
+    width: 1px;
+    background-color: #C4C4C4 ;
+}
+
+/*question number in results*/
+#questionResultNo{
+ border-top-left-radius: 4px;
+ border-bottom-left-radius: 4px;
+}
+
+/*tick and cross*/
+#resultCheck, #resultClear{
+ border-top-right-radius: 4px;
+ border-bottom-right-radius: 4px;
+ font-size: 25px;
+}
+
+/*padding row*/
+#paddingRow{
+  height: 10px;
+}
+
+/*tick*/
+td.correct {
+ font-size: 25px;
+ color: #1CD268 ;
+ font-weight: 900;
+ width: 4px;
+}
+
+/*cross*/
+td.wrong{
+ font-size: 25px;
+ color: #D21C1C ;
+ webkit-text-stroke: 4px black;
+ font-weight: 900;
+ width: 4px;
+}
+
+/*disabled buttons*/
+input[type=button]:disabled{
+ background-color: #c4c4c4 ;
+ color: #020335 ;
+}
+
+/*button animation*/
+.effectButton {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(237,162,181);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:hover, .effectButton:focus, .effectButton:active {
+  color: white;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:hover:before, .effectButton:focus:before, .effectButton:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  outline: none;
+  border-radius: 4px;
+}
+
+/*button table*/
+.saveAndQuitButtons {
+  margin-bottom: 30px;
+  width: 966px;
+  border-spacing: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -10px;
+}
+
+/*buttons*/
+.saveAndQuit{
+  text-align: right;
+  width: 220px;
+  background-color: #020335;
+  border-radius: 4px;
+}

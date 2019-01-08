@@ -1,0 +1,57 @@
+/*css for the about page*/
+
+/*sets the size of the
+member profile pictures*/
+.members img{
+  height: 100px;
+  width: 100px;
+}
+
+/*sets the style for the team name*/
+#teamName{
+  font-size: 32px;
+  font-weight: bold;
+  margin-left: -55px;
+}
+
+/*sets the style for the
+member name */
+h1{
+  font-size: 22px;
+  font-weight: normal;
+}
+
+/*sets the style for the
+member roles*/
+h2{
+  font-size: 18px;
+  font-weight: normal;
+}
+
+/*styles the table containing
+everything but the nav bars*/
+.members{
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  border-spacing: 10px;
+  margin-bottom: 50px;
+}
+
+/*sets the width of empty tds*/
+.emptyTD{
+  width: 20px;
+}
+
+/*sets the style of the heptagon logo*/
+#heptagonLogo{
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  margin-left: 0;
+}
+
+/*sets the style of the td containing the heptagon logo*/
+#heptagonLogoTD{
+  text-align: left;
+}

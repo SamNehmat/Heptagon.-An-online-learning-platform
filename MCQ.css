@@ -1,0 +1,550 @@
+
+/*css for MCQ*/
+
+/*all text areas*/
+textarea{
+  border-radius: 4px;
+  border: 1px;
+}
+
+/*submit button*/
+.submitBtn{
+  height: 46px;
+  width: 220px;
+  background-color: #020335;
+  border-radius: 4px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 42px;
+}
+
+/*title create row*/
+.MCQCreateTitleRow{
+  margin-top: 45px;
+  width: 963px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -12px;
+}
+
+/*left arrow*/
+.arrowLeft{
+  margin-right: -20px;
+}
+
+/*title*/
+#MCQTitle{
+  font-size: 32px;
+  font-weight: bold;
+  height: 60px;
+  width: 750px;
+}
+
+/*title in preview*/
+#MCQTitlePreview{
+  padding-top: 20px;
+}
+
+/*MCQ icon*/
+#MCQIconCreate{
+  width: 37px;
+  height: 37px;
+  border-radius: 4px;
+}
+
+/*exercise title*/
+#exerciseTitle{
+  font-size: 32px;
+  font-weight: bold;
+  width: 705px;
+  border-radius: 0;
+}
+
+/*placeholder style for firefox*/
+::-moz-placeholder{
+  font-style: italic;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+/*placeholder style for opera, safari and chrome*/
+::-webkit-input-placeholder {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+/*exercise title input placehodler style for firefox*/
+#exerciseTitle::-moz-placeholder{
+  font-style: italic;
+  font-weight: normal;
+  font-size: 25px;
+}
+
+/*exercise title input placehodler style for opera, safari and chrome*/
+#exerciseTitle::-webkit-input-placeholder{
+  font-style: italic;
+  font-weight: normal;
+  font-size: 25px;
+}
+
+/*question number*/
+#questionNumberAnswer{
+  font-size: 18px;
+  width: 85px;
+}
+
+/*question number*/
+#questionNumberAnswer input[type=text]{
+  background-color: rgba(0,0,0,0);
+}
+
+/*arrows*/
+.arrowClass{
+  font-size: 48px;
+  cursor: pointer;
+  width: 40px;
+}
+
+/*next question*/
+#nextQ{
+  margin-left: -25px;
+}
+
+/*title row left*/
+#MCQCreateTitleRowLeft{
+  display: inline;
+  border-spacing: 10px;
+}
+
+/*create question row*/
+.MCQCreateQuestion{
+  background-color: #C4C4C4;
+  width: 963px;
+  height: 100px;
+  border-radius: 4px;
+  border-spacing: 10px;
+}
+
+/*answer input container*/
+.MCQAnswerQuestion{
+  margin-top: -14px;
+  background-color: #C4C4C4;
+  width: 963px;
+  height: 100px;
+  border-radius: 4px;
+  border-spacing: 10px;
+}
+
+/*mcq results page*/
+.MCQResultsPage{
+  margin-left: auto;
+  margin-right: auto;
+  width: 963px;
+  font-size: 20px;
+}
+
+/*results summary tab*/
+.MCQResultsTab{
+  background-color: #C4C4C4;
+  width: 963px;
+  border-radius: 4px;
+  margin-top: 12px;
+}
+
+/*results summary tab td*/
+.MCQResultsTab td{
+  padding-left: 10px;
+}
+
+/*right answers column*/
+#rightAnswersTD{
+	width: 241px;
+}
+
+/*question input*/
+.questionCreateInput{
+  width: 938px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 4px;
+}
+
+/*question to answer*/
+td.questionToAnswer{
+  width: 922px;
+  font-size: 20px;
+  border-radius: 4px;
+  color: #020335;
+  height: 40px;
+  background-color: #FFFFFF;
+}
+
+/*question number */
+.questionNumberCreate{
+  font-size: 20px;
+  border: none
+}
+
+/*question number*/
+.questionNumberCreateNumber{
+  font-size: 16px;
+  color:#020335 !important;
+}
+
+/*answers*/
+.MCQCreateAnswer{
+  width: 963px;
+  height: 40px;
+  background-color: #C4C4C4;
+  border-radius: 4px;
+  border-spacing: 10px;
+  margin-top: 12px;
+}
+
+/*results table*/
+.MCQResultsTable{
+  width: 963px;
+  background-color: #C4C4C4;
+  border-radius: 4px;
+  border-spacing: 0px;
+  margin-top: 12px;
+}
+
+/*rounds left of results table rows*/
+.resultsTableRow td:nth-child(2){
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/*rounds right of results table rows*/
+.resultsTableRow td:nth-child(5){
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/*results table rows tds*/
+.resultsTableRow td{
+  background-color: #FFFFFF;
+  padding-left: 5px;
+  height: 40px;
+}
+
+/*padding row*/
+#paddingRow{
+	height: 10px;
+}
+
+/*result table question numbers */
+#questionResultNo{
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/**/
+#resultCheck, #resultsClear{
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  font-size: 25px;
+}
+
+/*padding td*/
+#paddingTD{
+	width: 1px;
+	background-color: #C4C4C4;
+}
+
+/*create andswer tds*/
+.MCQCreateAnswer td{
+  font-size: 20px;
+  text-align: center;
+  height: 40px !important;
+}
+
+/*create answer*/
+#createAnswer{
+  text-align: left;
+}
+
+/*answer options in practice*/
+.MCQCreateAnswer input[type="text"] {
+  font-size: 20px;
+  width: 825px;
+  height: 40px;
+  border-radius: 4px;
+}
+
+/*answer style*/
+.MCQAnswerStyle{
+  background-color: #FFFFFF;
+  width: 7px;
+  height: 10px;
+  border-radius: 4px;
+  color: #020335;
+  text-align: left;
+}
+
+/*answer options in practice*/
+.MCQAnswerButton {
+  font-size: 20px;
+  width: 911px;
+  height: 40px;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #020335;
+  text-align: left;
+
+}
+
+/*answer options in practice when disabled*/
+.MCQAnswerButton:disabled {
+  width: 860px;
+  cursor: default;
+}
+
+/*answer options in practice when hover*/
+.MCQAnswerButton:hover{
+  background-color: #020335;
+  color: #FFFFFF;
+}
+
+/*answer options in practice disabled and hover*/
+.MCQAnswerButton:disabled:hover {
+  background-color: #FFFFFF;
+  width: 860px;
+  color: #020335;
+}
+
+/*sleected answer*/
+.MCQAnswerButton.selected {
+  background-color: #020335;
+  color: #FFFFFF;
+}
+
+/*sleected answer hover*/
+.MCQAnswerButton.selected:hover {
+  background-color: #020335;
+  color: #FFFFFF;
+}
+
+/*feedback*/
+.MCQCreateFeedback{
+  background-color: #C4C4C4;
+  width: 966px;
+  height: 108px;
+  border-radius: 4px;
+  border-spacing: 10px;
+  margin-top: 12px;
+  font-size: 20px;
+}
+
+/*create part bottom buttons container*/
+.saveAndQuitButtons {
+  margin-bottom: 30px;
+  width: 966px;
+  border-spacing: 30px;
+  margin-left: -131px;
+  margin-top: -10px;
+}
+
+/*create part bottom buttons*/
+.saveAndQuit{
+  text-align: right;
+  width: 220px;
+  background-color: #020335;
+  border-radius: 4px;
+}
+
+/*previous and next buttons container*/
+.navButtons {
+  margin-bottom: 70px;
+  width: 966px;
+  border-spacing: 30px;
+  margin-left: 33px;
+}
+
+/*previous and next buttons*/
+.navButtons input[type="button"]{
+  background-color: #020335;
+  color: white;
+}
+
+/*previous and next buttons container tds*/
+
+.navButtons td{
+  width: 220px;
+  background: toTransparent;
+  border-radius: 4px;
+}
+
+/*tds to transparent*/
+#toTransparent{
+  background-color: #FFFFFF;
+  width: 200px;
+}
+
+/*MCQCreatePage*/
+.MCQCreatePage{
+  margin: auto;
+  display: block;
+  width: 966px;
+}
+
+/*MCQCreatePage hidden*/
+.MCQCreatePage1{
+  margin: auto;
+  display: none;
+  width: 966px;
+}
+
+/*check*/
+td.correct {
+  font-size: 15px;
+  color: #1CD268;
+  font-weight: 900;
+  width: 4px;
+  height: 40px;
+}
+
+/*cross*/
+td.wrong{
+  font-size: 15px;
+  color: #D21C1C;
+  webkit-text-stroke: 4px black;
+  font-weight: 900;
+  width: 4px;
+  height: 40px;
+}
+
+/*check and cross icons*/
+td.wrong img, td.correct img{
+  height: 20px;
+}
+
+/*feedback in practice mode*/
+.showFeedback{
+  background-color: #FFFFFF;
+  color: #020355;
+  border-radius: 4px;
+  height: 80px;
+  vertical-align: top;
+}
+
+/*feedbakc input field*/
+#feedbackInput{
+  margin-top: -15px;
+  font-size: 20px;
+  width: 940px;
+}
+
+/*answer number*/
+.answerNo{
+  width: 10px;
+  height: 40px;
+}
+
+/*header*/
+#header td{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/*button on bottom when in practice*/
+#practiceSaveAndQuit{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*question results td*/
+#questionResultTD{
+	padding-left: 10px;
+}
+
+/*navbuttons when disabled*/
+.navButtons input[type=button]:disabled{
+  background-color: #c4c4c4;
+  color: #020335;
+}
+
+/*radio buttons*/
+input[type=radio]:not(old){
+  width: 56px;
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
+  opacity: 0;
+}
+input[type=radio]:not(old) + label{
+  display: inline-block;
+  margin-left: -56px;
+  line-height: 42px;
+}
+input[type=radio]:not(old) + label > span{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin: 7px 14px 7px 7px;
+  border-radius: 7px;
+  background-color: #FFFFFF;
+  vertical-align: bottom;
+}
+input[type=radio]:not(old):checked + label > span{
+  background-color: #FFFFFF;
+}
+input[type=radio]:not(old):checked + label > span > span{
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin: 3px;
+  border-radius: 3px;
+  background-color: #020335;
+}
+
+/*button animation*/
+.effectButton {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(237,162,181);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:hover, .effectButton:focus, .effectButton:active {
+  color: white;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:hover:before, .effectButton:focus:before, .effectButton:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  outline: none;
+  border-radius: 4px;
+}

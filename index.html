@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel='shortcut icon' href='images/transparent_logo.png'>
+<title>Belooga</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,700|Oswald:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/homepage.css"/>
+<link type="text/css" rel="stylesheet" href="css/common.css"/>
+<script type="text/javascript" src="../../../jquery/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="//cdn.auth0.com/w2/auth0-7.0.3.min.js"></script>
+<script type="text/javascript" src="js/auth.js"></script>
+<script src="js/smooth-scroll.js"></script>
+</head>
+<body>
+
+<!-- Navigation bar - includes the application's logo and name and two buttons "Register" and "Sign In" that redirect the user to the Register and Sign In pages respectively -->
+  <div class="navbar">
+    <table class="navContent">
+      <tr>
+        <td>
+          <table class="navBarLeft">
+            <tr>
+              <td id="logoNav">
+                <img src="images/navLogo.png" onClick="location.reload();location.href='index.html'" value="Belooga" class="navBarElement" />
+              </td>
+              <td id="appName">
+                <input type="button" onClick="location.reload();location.href='index.html'" value="Belooga" class="navBarElement"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="navBarRight">
+            <tr>
+              <td class="registerTD">
+                <input type="button" onClick="location.reload();location.href='register.html'" value="Register" class="registerTD"/>
+              </td>
+              <td class="signInTD">
+                <input type="button" onClick="location.reload();location.href='signIn.html'" value="Sign In" class="signInTD"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
+
+<!-- This container displays main information about the website - including the logo and a short description-->
+  <div class="homepage">
+    <img id="bigIcon" src="images/logo.jpg" />
+    <p id="catchphrase">When there&#39s a whale, there&#39s a way!</p>
+    <p id="description">
+      Welcome to Belooga! You can create your own interactive exercises to share. Choose from a variety of exercises including Multiple Choice Questions, Hangman, Matchers and Fill in the Blanks. Register to share your work and expand your knowledge!
+	  Belooga is an application for school teachers that includes four applications, enabling them to create interactive multiple-choice, hangman, matching/ordering and gap-fill exercises for their students to access on the World Wide Web. Belooga is
+	 freeware, and you may use it for any purpose or project you like but is currently restricted to personnel with a King's College London k-number. All exercises are fully customisable, giving teachers and students alike the ability to creatively challenge students
+	 to learn languages in an interactive way. You will not have to wait a whale for students to learn languages. With Belooga, it is fun, fast and efficient.
+    </p>
+<!-- This table includes links (both on the images and text) that redirect the user to the part of the page where the relevant feature is explained -->
+    <table class= "indexLinks">
+      <tr>
+        <td>
+          <a data-scroll href="#mcq1"><img src="images/MCQ.jpg"/></a>
+        </td>
+        <td>
+          <a data-scroll href="#hangman1"><img src="images/hangman.jpg"/></a>
+        </td>
+        <td>
+          <a data-scroll href="#matcher1"><img src="images/matcher.jpg"/></a>
+        </td>
+        <td>
+          <a data-scroll href="#blanks1"><img src="images/gaps.jpg"/></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a data-scroll href="#mcq1">Multiple Choice Questions</a>
+        </td>
+        <td>
+          <a data-scroll href="#hangman1">Hangman</a>
+        </td>
+        <td>
+          <a data-scroll href="#matcher1">Matcher</a>
+        </td>
+        <td>
+          <a data-scroll href="#blanks1">Blanks</a>
+        </td>
+      </tr>
+    </table>
+<!-- This table includes short description for each feature. All include a preview of the exercise (as an image) and a short descriptive text. Each links in the table above redirect to the corresponding feature in the table below using their IDs -->
+    <table id="exerciseDescription">
+      <tr id="mcq1" class="emptyRow">
+      </tr>
+      <tr>
+        <td class="exerciseText grey" ><h1 class="exerciseTitle">Multiple Choice Questions</h1><h2>Create your own MCQs. An MCQ consists of a problem and a list of suggested answers. The answers consist of a correct answer and incorrect or inferior alternatives, used as distractors. Add as many questions to an exercise as you want with up to five potential answers per question. You may also provide feedback for guidance. </h2> </td>
+        <td id="mcq" class="exerciseLogo" colspan="2"><img src="images/mcqPreview.PNG"/></td>
+      </tr>
+      <tr class="emptyRow" id="hangman1">
+      </tr>
+      <tr>
+        <td  id="hangman" class="exerciseLogo" colspan="2"><img src="images/hangmanPreview.PNG"/></td>
+        <td  class="exerciseText blue" ><h1 class="exerciseTitle">Hangman</h1><h2>Build your own Hangman. Make your exercise interactive by setting the answer to your question as the word to be guessed. Users will have a limited amount of chances (5) to guess the word. Every incorrect guess will add an element to the Hangman. Give a hint to help the user out and include optional feedback for a greater learning experience. (Letters from the Latin alphabet are accepted).</h2></td>
+      </tr>
+      <tr class="emptyRow" id="matcher1">
+      </tr>
+      <tr>
+        <td class="exerciseText grey" > <h1 class="exerciseTitle">Matcher</h1><h2>Create your own matching exercises. A matching question is two lists of related words or phrases. Each item in one list is paired with one item in the other list. Provide a question and a list of up to ten paired items. The right pair of the items will be mixed and the user must match them with the corresponding correct pair. You can remove and add pairs to change the difficulty for various users. </h2></td>
+        <td id="matcher" class="exerciseLogo" colspan="2"><img id="matcherIMG" src="images/matcherPreview.png"/></td>
+      </tr>
+      <tr class="emptyRow" id="blanks1">
+      </tr>
+      <tr>
+        <td id="blanks" class="exerciseLogo" colspan="2"><img id="blanksIMG"src="images/blanksPreview.png"/></td>
+        <td class="exerciseText blue" ><h1 class="exerciseTitle">Blanks</h1><h2>Make your own fill-in-the-blanks exercises. Write a paragraph and highlight the word you wish to be hidden. You can select multiple words to be hidden. Hidden words will appear as text boxes in the text and the user must enter the correct word. They will be given the original text on the results page at the end.</h2></td>
+      </tr>
+    </table>
+  </div>
+
+
+<!-- Contact bar for the bottom of the page - includes links to the About and Contact Us page when clicking on their respective buttons -->
+  <div class="contactBar">
+    <table class="contactTable">
+      <tr>
+        <td id="KCL">King&#39s&nbspCollege&nbspLondon&nbspModern&nbspLanguage&nbspCentre</td>
+        <td>
+          <table>
+            <tr>
+              <td id="About">
+                <input type="button" value="About" class="navBarElementNormal"/>
+              </td>
+              <td id="Contact">
+                <input type="button" value="Contact Us" class="navBarElementNormal"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+<script>
+    smoothScroll.init();
+</script>
+<script type="text/javascript" src="js/commonLinks.js"></script>
+</html>

@@ -1,0 +1,501 @@
+/*css for matcher*/
+
+/*matcher title row on create*/
+.matcherCreateTitleRow{
+ margin-top: 45px;
+ width: 963px;
+ margin-left: auto;
+ margin-right: auto;
+ margin-bottom: -12px;
+}
+
+/*left of title row*/
+#matcherCreateTitleRowLeft{
+ display: inline;
+ border-spacing: 10px;
+}
+
+/*matcher icon*/
+#matcherIconCreate{
+ width: 37px;
+ height: 37px;
+ border-radius: 4px;
+}
+
+/*matcher title*/
+#matcherTitle{
+ font-size: 32px;
+ font-weight: bold;
+ height: 60px;
+ width: 750px;
+}
+
+/*exercise title*/
+#exerciseTitle{
+ font-size: 32px;
+ font-weight: bold;
+ width: 705px;
+ border-radius: 0;
+}
+
+/*round the left of the results table row*/
+.resultsTableRow td:nth-child(2){
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/*round the right of the results table row*/
+.resultsTableRow td:nth-child(6){
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/*placeholder sytle for firefox*/
+::-moz-placeholder{
+ font-style: italic;
+ font-weight: normal;
+ font-size: 25px;
+}
+
+/*placeholder style for opera, safari and chrome*/
+::-webkit-input-placeholder {
+ font-style: italic;
+ font-weight: normal;
+ font-size: 25px;
+}
+
+/*arrows*/
+.arrowClass{
+ font-size: 48px;
+ cursor: pointer;
+ width: 40px;
+}
+
+/*left arrow*/
+.arrowLeft{
+ margin-right: -20px;
+}
+
+/*question number*/
+.questionNumberCreate{
+ font-size: 20px;
+ border: none
+}
+
+/*question number*/
+.questionNumberCreateNumber{
+ font-size: 16px;
+ width: 10px;
+ margin-right: -10px;
+}
+
+/*question inout field*/
+.questionCreateInput{
+ width: 938px;
+ height: 40px;
+ font-size: 20px;
+ border-radius: 4px;
+}
+
+/*table for question input*/
+.matcherCreateQuestion{
+ background-color: #C4C4C4 ;
+ width: 963px;
+ height: 100px;
+ border-radius: 4px;
+ border-spacing: 10px;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+/*question number*/
+#matcherQuestionNumber{
+  background-color: #c4c4c4;
+}
+
+/*answer input table*/
+.matcherCreateAnswers{
+  background-color: #c4c4c4;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-spacing: 10px;
+  width: 963px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 12px;
+}
+
+/*input field on left and right*/
+.matcherCreateAnswers input[type="text"]{
+  width: 415px;
+  height: 40px;
+}
+
+/*tds in the answer input table*/
+.matcherCreateAnswers td{
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+/*add new pair button and
+delete last pair container table*/
+.addNewMatcherPair{
+  background-color: #c4c4c4;
+  width: 963px;
+  padding-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/*add new and delete last buttons*/
+.addNewMatcherPair input[type="button"]{
+  font-size: 18px;
+  color: #020335;
+  width: 30px;
+}
+
+/*add new and delete last buttons when hover*/
+.addNewMatcherPair input[type="button"]:hover{
+  text-decoration: underline;
+  cursor: pointer;
+  width: 30px;
+}
+
+/*contaner for buttons on the bottom*/
+.saveAndQuitButtons {
+  margin-bottom: 30px;
+  width: 966px;
+  border-spacing: 30px;
+  margin-left: -131px;
+  margin-top: -10px;
+}
+
+/*to transparent */
+#toTransparent{
+  background-color: #FFFFFF;
+  width: 200px;
+}
+
+/*buttons on the buttom*/
+.saveAndQuitButtons{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*buttons*/
+.saveAndQuit{
+  text-align: right;
+  width: 220px;
+  background-color: #020335;
+  border-radius: 4px;
+}
+
+/*icon for add new pair and delete last pair */
+.addNewMatcherPair img{
+  height: 25px;
+  width: 25px;
+}
+
+/*add new button*/
+#addButton input[type="button"]{
+  width: 100px;
+  margin-left: -20px;
+}
+
+/*add new td*/
+#addButton{
+  width: 100px;
+}
+
+/*delete last button*/
+#deleteButton input[type="button"]{
+  width: 120px;
+  text-align: left;
+}
+
+/*delete last td*/
+#deleteButton{
+  width: 600px;
+}
+
+/*add new and delete last icons*/
+#plusIcon, #deleteIcon{
+  width: 25px;
+}
+
+/*add new icon*/
+#plusIcon{
+  padding-left: 50px;
+}
+
+/*when an option in the
+dropdown is empty hide it*/
+option:empty{
+  display:none;
+}
+
+/*practice matcher question field*/
+.matcherAnswerQuestion{
+ margin-top: -14px;
+ background-color: #C4C4C4 ;
+ width: 963px;
+ height: 100px;
+ border-radius: 4px;
+ border-spacing: 10px;
+ margin-right: auto;
+ margin-left: auto;
+}
+
+/*practice matcher question number*/
+#questionNumberAnswer{
+ font-size: 18px;
+ width: 85px;
+}
+
+/*practice matcher question number*/
+#questionNumberAnswer input[type=text]{
+ background-color: rgba(0,0,0,0);
+}
+
+/*question to answer*/
+td.questionToAnswer{
+ width: 922px;
+ font-size: 20px;
+ border-radius: 4px;
+ color: #020335 ;
+ height: 40px;
+ background-color: #FFFFFF ;
+}
+
+/*practice matcher field*/
+.matcherAnswers{
+ background-color: #c4c4c4 ;
+ border-top-left-radius: 4px;
+ border-top-right-radius: 4px;
+ border-spacing: 10px;
+ width: 963px;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 12px;
+}
+
+/*matcher answers td*/
+.matcherAnswers td{
+ height: 40px;
+ font-size: 20px;
+ padding-left: 10px;
+}
+
+/*matcher answers table header*/
+.matcherAnswers th{
+  font-size: 20px;
+  font-weight: normal;
+  text-align: left;
+  padding-left: 10px;
+}
+
+/*empty td*/
+.answerEmptyTD{
+  width: 5px;
+}
+
+/*practice matcher left*/
+.matcherAnswers td:nth-child(2){
+  background-color: #FFFFFF;
+  border-radius: 4px;
+  width: 430px;
+}
+
+/*practice matcher right*/
+.matcherAnswers td:nth-child(3){
+  width: 415px !important;
+  height: 40px;
+  border-radius: 4px;
+  background-size: 450px 40px;
+  background-image: url('../images/dropdownArrow.png');
+}
+
+/*matcher right dorp down*/
+.matcherAnswers select{
+  width: 445px;
+  height: 40px;
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  background: transparent;
+  font-size: 20px;
+  border: none;
+  border-radius: 4px;
+  padding:0;
+  margin:0;
+  outline: none;
+}
+
+/*rounds bottom of practice matcher*/
+.lastAnswerRow{
+  width: 963px;
+  height: 5px;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #C4C4C4;
+}
+
+/*results tab summary*/
+.matcherResultsTab{
+ background-color: #C4C4C4 ;
+ width: 963px;
+ border-radius: 4px;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 12px;
+}
+
+/*results tab td padding*/
+.matcherResultsTab td{
+ padding-left: 10px;
+}
+
+/*right answers column*/
+#rightAnswersTD{
+    width: 241px;
+}
+
+/*results table*/
+.matcherResultsTable{
+ width: 963px;
+ background-color: #C4C4C4 ;
+ border-radius: 4px;
+ border-spacing: 0px;
+ margin-top: 12px;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+/*results table header*/
+#header td{
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+
+/*question number in results*/
+#questionResultTD{
+    padding-left: 10px;
+}
+
+/*results table row tds*/
+.resultsTableRow td{
+ background-color: #FFFFFF ;
+ padding-left: 5px;
+ height: 40px;
+}
+
+/*hides matcher create*/
+.MatcherCreatePage1{
+  margin: auto;
+  display: none;
+}
+
+/*padding*/
+#paddingTD{
+    width: 1px;
+    background-color: #C4C4C4 ;
+}
+
+/*rounds left of results row*/
+#questionResultNo{
+ border-top-left-radius: 4px;
+ border-bottom-left-radius: 4px;
+}
+
+/*rounds right of results row*/
+#resultCheck #resultClear{
+ border-top-right-radius: 4px;
+ border-bottom-right-radius: 4px;
+ font-size: 25px;
+}
+
+/*padding*/
+#paddingRow{
+  height: 10px;
+}
+
+/*check*/
+td.correct {
+ font-size: 15px;
+ color: #1CD268 ;
+ font-weight: 900;
+ width: 4px;
+}
+
+/*cross*/
+td.wrong{
+ font-size: 15px;
+ color: #D21C1C ;
+ webkit-text-stroke: 4px black;
+ font-weight: 900;
+ width: 4px;
+}
+
+/*check and cross icons*/
+td.wrong img, td.correct img{
+ height: 20px;
+}
+
+/*disabled buttons*/
+input[type=button]:disabled{
+  background-color: #c4c4c4;
+  color: #020335;
+}
+
+/*button animation*/
+.effectButton {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(237,162,181);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:hover, .effectButton:focus, .effectButton:active {
+  color: white;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:hover:before, .effectButton:focus:before, .effectButton:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  outline: none;
+  border-radius: 4px;
+
+}

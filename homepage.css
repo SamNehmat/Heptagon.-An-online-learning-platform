@@ -1,0 +1,163 @@
+/*css for homepage*/
+
+/*register*/
+td.registerTD input.registerTD{
+  width: 66px;
+  padding-right: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/*sign in*/
+td.signInTD, input.signInTD{
+  width: 58px;
+  margin-right: 5px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+
+/*home page logo*/
+#bigIcon {
+  width: 400px;
+  height: 400px;
+  margin: auto;
+  display: block;
+}
+
+/*catchphrase*/
+#catchphrase{
+  font-size: 25px;
+  color: #020335;
+  text-align: center;
+  margin-top: -30px;
+  font-weight: bold;
+}
+
+/*app description*/
+#description{
+  color: #020335;
+  text-align: justify;
+  font-size: 18px;
+  font-weight: normal;
+  padding: 0px 5% 0px 5%;
+  margin-bottom: 100px;
+  line-height: 27px;
+}
+
+/*description of each exercise type*/
+#exerciseDescription{
+  border-spacing: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 75px;
+  width: 1300px;
+}
+
+/*descriptions that are in a blue container*/
+#exerciseDescription .blue{
+  background-color: #020335;
+  color: #FFFFFF;
+  border-radius: 4px;
+  height: 146px;
+}
+
+/*blue container text*/
+#exerciseDescription .blue h1, #exerciseDescription .blue h2{
+  color: #FFFFFF;
+  width: 350px;
+  padding: 10px;
+}
+
+/*grey container text*/
+#exerciseDescription .grey h1, #exerciseDescription .grey h2{
+  width: 350px;
+  padding: 10px;
+}
+
+/*icons*/
+ #mcq, #matcher, #blanks, #hangman{
+  height: 300px;
+  width: 300px;
+}
+
+/*text under logos*/
+.exerciseText{
+  width: 300px !important;
+  font-size: 20px;
+  text-align: left;
+}
+
+/*demo images*/
+.exerciseLogo img{
+  height: 564px;
+  width: 988px;
+  border: 2px solid #C4C4C4;
+  border-radius: 4px;
+}
+
+/*descriptions in grey container*/
+#exerciseDescription .grey{
+  color: #020335;
+  background-color: #C4C4C4;
+  border-radius: 4px;
+  height: 146px;
+  text-align: right;
+}
+
+/*padding row*/
+.emptyRow{
+  height: 50px;
+}
+
+/*exercise logo*/
+.exerciseLogo{
+    line-height: 10px;
+}
+
+/*exercise title */
+.exerciseTitle{
+  font-size: 26px;
+  font-weight: bold;
+  padding:0;
+}
+
+/*exercise description*/
+h2{
+  font-size: 20px;
+  font-weight: normal;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*table with the 4 exercise types
+linked to their description*/
+.indexLinks{
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  margin-top: -50px;
+}
+
+/*icons*/
+.indexLinks img{
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+}
+
+/*icons td*/
+.indexLinks td{
+  text-align: center;
+  width: 50px;
+}
+
+/*body*/
+body{
+    width: 100%;
+    padding-bottom: 110px;
+    margin: 0;
+}

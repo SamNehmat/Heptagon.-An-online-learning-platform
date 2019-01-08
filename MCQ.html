@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel='shortcut icon' href='images/transparent_logo.png'>
+<title>Belooga - MCQ</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,700|Oswald:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/MCQ.css"/>
+<link type="text/css" rel="stylesheet" href="css/common.css"/>
+<link rel='stylesheet' type='text/css' href='https://belooga.000webhostapp.com/css/MCQ.css'>
+<link rel='stylesheet' type='text/css' href='https://belooga.000webhostapp.com/css/common.css'>
+<script type="text/javascript" src="../../../jquery/jquery-3.1.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+if (localStorage.getItem('kNumber') === null) {
+  alert('Please sign in first.');
+  window.location.href = "https://belooga.000webhostapp.com/signIn";
+}
+</script>
+<script type="text/javascript" src="//cdn.auth0.com/w2/auth0-7.0.3.min.js"></script>
+<script type="text/javascript" src="js/auth.js"></script>
+<body onLoad = '{document.forms[0].questNo.value = 1;}'>
+</head>
+<body>
+
+<!-- Navigation bar - includes logo and app name that link to the dashboard. Also contains the k-number of the signed in user -->
+  <div class="navbar">
+    <table class="navContent">
+      <tr>
+        <td>
+          <table class="navBarLeft">
+            <tr>
+              <td id="logoNav">
+                <img src="images/navLogo.png" />
+              </td>
+              <td id="appName">
+                <input type="button" value="Belooga" class="navBarElement"/>
+              </td>
+              <td id="createNav">
+                  <input type="button" value="Dashboard" class="navBarElementSmall" />
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="navBarRight">
+            <tr>
+              <td id="profilePicTD">
+                <img id="profilePic" src="images/profile.png" />
+              </td>
+              <td id="usernameTD">
+                <input type="button" value="k1502609" class="navBarElementNormal"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+    </table>
+
+    <!-- Sign out container. Opened upon clicking on the k-number. Contains a "Sign Out" button that logs the user out -->
+    <div class="signOutButton">
+      <table>
+        <tr>
+          <td class="iconFont" id="lock">lock</td>
+          <td>
+            <input class="button" id="logOutButton" type="button" value="Sign Out"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+<!-- Main page for the creation of an MCQ exercise -->
+  <div class="MCQCreatePage">
+    <form>
+    <!--First container to be displayed. It includes the logo of the exercise, an input field for the user to enter the name of the exercise. It also includes the number of questions that have been created so far including the one the user is working on. These are surrounded by right and left arrows that enables the user to navigate through the created questions -->
+    <table class="MCQCreateTitleRow">
+      <tr>
+        <td>
+          <table id="MCQCreateTitleRowLeft">
+            <tr>
+              <td>
+                <img id="MCQIconCreate" src="images/MCQ.jpg"/>
+              </td>
+              <td id="MCQTitle">
+              	<input type=text size=25 name="ExerciseTitle" id='exerciseTitle' placeholder='Insert Exercise Title'>
+              </td>
+              <td>
+                <input type="button" value="keyboard_arrow_left" class="iconFont arrowClass arrowLeft" id="prevQ" onClick="prevQuestion()"/>
+              </td>
+              <td id="questionNumberCreate"><input class= "questionNumberCreateNumber" type=text size=1 id="questNo" name='questNo' value=1 readonly></td>
+              <td>/</td>
+              <td id="questionNumberCreate"><input class= "questionNumberCreateNumber" type=text size=1 id="maxQuestNo" name='maxQuestNo' value=1 readonly></td>
+              <td>
+                <input type="button" value="keyboard_arrow_right" class="iconFont arrowClass" id="nextQ" onClick="nextQuestion()"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+
+  <!-- This container includes a textarea in which the user enters the question -->
+  <table class="MCQCreateQuestion">
+    <tr>
+      <td class="questionNumberCreate">Question:</td>
+    </tr>
+    <tr>
+      <td>
+        <input class="questionCreateInput" type="textarea" id="question" name="question" placeholder="Insert Question" />
+      </td>
+    </tr>
+  </table>
+
+<!-- This table includes the two to five potential answers to the question (only one correct). The user enters the answers in the text fields provided and the radio buttons in the last column are clicked to select which of the answers is the correct one -->
+  <table class="MCQCreateAnswer">
+    <tr>
+      <td colspan="2" id="createAnswer">Answer:</td>
+      <td>Correct?</td>
+    </tr>
+    <tr>
+      <td>A.</td>
+      <td>
+        <input type="text" id="answer1" name="answer1" placeholder="Insert Answer"/>
+      </td>
+      <td>
+        <input type="radio" name="answer" id="answera" ><label for="radio1"><span><span></span></span></label>
+      </td>
+    </tr>
+    <tr>
+       <td>B.</td>
+      <td>
+        <input type="text" id="answer2" name="answer2" placeholder="Insert Answer"/>
+      </td>
+      <td>
+        <input type="radio" name="answer" id="answerb"><label for="radio2"><span><span></span></span></label>
+      </td>
+    </tr>
+    <tr>
+       <td>C.</td>
+      <td>
+        <input type="text" id="answer3" name="answer3" placeholder="Insert Answer (Optional)"/>
+      </td>
+      <td>
+         <input type="radio" name="answer" id="answerc"><label for="radio3"><span><span></span></span></label>
+      </td>
+    </tr>
+    <tr>
+       <td>D.</td>
+      <td>
+        <input type="text" id="answer4" name="answer4" placeholder="Insert Answer (Optional)"/>
+      </td>
+      <td>
+        <input type="radio" name="answer" id="answerd"><label for="radio4"><span><span></span></span></label>
+      </td>
+    </tr>
+	 <tr>
+       <td>E.</td>
+      <td>
+        <input type="text" id="answer5" name="answer5" placeholder="Insert Answer (Optional)"/>
+      </td>
+      <td>
+        <input type="radio" name="answer" id="answere"><label for="radio5"><span><span></span></span></label>
+      </td>
+    </tr>
+  </table>
+
+<!-- This table includes a textarea for the user to input an optional feedback that will be displayed once an answer has been answered -->
+  <table class="MCQCreateFeedback">
+    <tr>
+      <td>Feedback:</td>
+    </tr>
+    <tr>
+      <td>
+        <textarea id="feedbackInput" rows="2" cols="82" name="feedback" placeholder="Insert Feedback (Optional)"></textarea>
+      </td>
+    </tr>
+  </table>
+
+<!-- This container contains all the buttons the user can use when creating an MCQ exercise. The "Clear" button clears all fields, the "Preview" button shows the preview of the exercise created so far, the "Save" button allows the user to save and opens a modal to do so and the "Add Question" button adds the question the user is currently working on to the lists of questions in the whole exercise -->
+<table class="saveAndQuitButtons">
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    <td class="saveAndQuit effectButton">
+        <input type="button" value="Clear" id='clear' onClick='clearForm()' class="button"/>
+      </td>
+      <td class="saveAndQuit effectButton">
+        <input type="button" value="Preview" class="button" onClick='writeQuiz(this.form,numberOfQuestions, true);previewQuiz(this.form)' />
+      </td>
+      <td class="saveAndQuit effectButton">
+        <input type="button" value="Save" class="button" data-toggle="modal" data-target="#myModalSave" id="Save"/>
+      </td>
+      <td class="saveAndQuit effectButton">
+        <input type="button" value="Add Question" class="button" id='addQ' onClick='addQuestion(this.form,this.form.questNo.value)'/>
+      </td>
+    </tr>
+  </table>
+  	  <textarea name="quizFileSource" ID="quizFSource" rows=50 cols=180 hidden></textarea>
+  </form>
+ </div>
+
+<!-- This container includes a "help" button the user can click on to display information on MCQ, opening the corresponding modal-->
+<div class="helpButton">
+    <input type="button" class="iconFont" value="help_outline" id="help"/>
+  </div>
+
+<!-- This modal is displayed once the "Save" button is clicked. It contains two buttons: "Online" to save the newly created exercise onto the dashboard and "Offline", which allows the user to save the exercise as an html file on the user's device -->
+<div class="container">
+<div id="myModalSave" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Save</h2>
+    </div>
+    <div class="modal-body">
+         <p><b>Would you like to save the created exercise online or offline?</b></p>
+         <p><i>Note: If saving online, your exercise can be accessed from the dashboard</i></p>
+         <div class="buttonsTable">
+         <table class="buttonsSaving">
+           <tr>
+             <td class="empty">
+             </td>
+             <td class="empty">
+             </td>
+             <td class="empty">
+             </td>
+            <td class="effectButton savingButtons onlineButton">
+             <input type="button" class="btn btn-default button" data-dismiss="modal" onClick="writeQuiz(this.form,numberOfQuestions, true);saveTextAsFileOnline();" value="Online"/>
+             </td>
+            <td class="effectButton savingButtons">
+              <input type="button" class="btn btn-default button" data-dismiss="modal" onClick="writeQuiz(this.form,numberOfQuestions, false);saveTextAsFileOffline();" value="Offline"/>
+            </td>
+           </tr>
+        </table>
+        </div>
+       </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- This modal displays once the "help" button is clicked. It includes information on how to create and how to answer questions in MCQ exercises -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Multiple Choice Questions - Help</h2>
+    </div>
+    <div class="modal-body">
+      <p>The Multiple Choice Questions feature allows the user to create question-based quizzes. Questions can have between two and five different options to choose the answer from. Feedback and scoring are also included. The feature includes automatic scoring and will tell the student how many questions they answered correctly out of all the questions in the quiz on the results page. When creating the quiz, you must enter a title for the whole quiz and can create multiple questions. After typing in the question, you can enter between two and five different possibilities of what the answer could be. Ticking the radio button on the right determines which answer is correct. You can also enter feedback for the question that will be displayed once an answer has been selected. Upon creating the quiz, you can save the quiz and share it with other users. If you want to try the quiz out as a user, then click on the Preview button or save it online and open it on your Dashboard. This allows you to test it out and see how the finished quiz will run.</p>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+
+
+<!-- Contact bar for the bottom of the page. Includes links to both the About and Contact Us pages -->
+<div class="contactBar">
+    <table class="contactTable">
+      <tr>
+        <td id="KCL">King&#39s&nbspCollege&nbspLondon&nbspModern&nbspLanguage&nbspCentre</td>
+        <td>
+          <table>
+            <tr>
+              <td id="About">
+                <input type="button" value="About" class="navBarElementNormal"/>
+              </td>
+              <td id="Contact">
+                <input type="button" value="Contact Us" class="navBarElementNormal"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+<!-- This modal is used to display information to the user that is creating the quiz. These may include, for instance, reminders to add a title to the quiz if the user forgot to do so -->
+<div id="myModal1" class="modal1">
+  <div class="modal-content1">
+    <div class="modal-header1">
+      <span class="close1">&times;</span>
+      <h3 id='modalText'></h3>
+    </div>
+  </div>
+
+</div> <script type="text/javascript" src="js/modal.js"></script>
+ <script type='text/javascript' src='https://belooga.000webhostapp.com/js/modal.js'></script>
+ <script type='text/javascript' src='js/mcq.js'></script>
+ <script type='text/javascript' src='https://belooga.000webhostapp.com/js/mcq.js'></script>
+ <script type="text/javascript" src="js/commonLinks.js"></script>
+ <script type='text/javascript' src='https://belooga.000webhostapp.com/js/commonLinks.js'></script>
+ <script type="text/javascript" src="js/commonSignedIn.js"></script>
+
+</body>
+</html>

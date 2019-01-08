@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="images/transparent_logo.png">
+   <title>Belooga - Blanks</title>
+   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,700|Oswald:300,400,700" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   <link type="text/css" rel="stylesheet" href="css/blanks.css" />
+   <link type="text/css" rel="stylesheet" href="css/common.css" />
+   <link rel='stylesheet' type='text/css' href='https://belooga.000webhostapp.com/css/blanks.css'>
+   <link rel='stylesheet' type='text/css' href='https://belooga.000webhostapp.com/css/common.css'>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script type="text/javascript" src="../../../jquery/jquery-3.1.1.min.js"></script>
+
+   <script type="text/javascript" src="//cdn.auth0.com/w2/auth0-7.0.3.min.js"></script>
+ <script type="text/javascript" src="js/auth.js"></script>
+   <body onLoad=''>
+</head>
+
+<body>
+
+<!-- Navigation bar - includes logo and app name that link to the dashboard. Also contains the k-number of the signed in user -->
+
+   <div class="navbar">
+       <table class="navContent">
+           <tr>
+               <td>
+                   <table class="navBarLeft">
+                       <tr>
+                           <td id="logoNav">
+                               <img src="images/navLogo.png" />
+                           </td>
+                           <td id="appName">
+                               <input type="button" value="Belooga" class="navBarElement" />
+                           </td>
+                           <td id="createNav">
+                               <input type="button" value="Dashboard" class="navBarElementSmall" />
+                           </td>
+                       </tr>
+                   </table>
+               </td>
+               <td>
+                   <table class="navBarRight">
+                       <tr>
+                           <td id="profilePicTD">
+                               <img id="profilePic" src="images/profile.png" />
+                           </td>
+                           <td id="usernameTD">
+                               <input type="button" value="k1502609" class="navBarElementNormal" />
+                           </td>
+                       </tr>
+                   </table>
+               </td>
+           </tr>
+       </table>
+           <!-- Sign out container. Opened upon clicking on the k-number. Contains a "Sign Out" button that logs the user out -->
+        <div class="signOutButton">
+    	<table>
+        <tr>
+          <td class="iconFont" id="lock">lock</td>
+          <td>
+            <input class="button" id="logOutButton" type="button" value="Sign Out"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+   </div>
+
+   <!-- Main page for the creation of a Blanks exercise-->
+<div>
+	<form class="menu" name="menu">
+	<!-- This container is the first to be displayed on the page. Includes the Blanks logo and an input field to enter the title of the quiz -->
+	<table class="blanksCreateTitleRow">
+     <tr>
+       <td>
+         <table id="blanksCreateTitleRowLeft">
+           <tr>
+             <td>
+               <img id="blanksIconCreate" src="images/gaps.jpg"/>
+             </td>
+             <td id="blanksTitle">
+                 <input type='text' size=25 name="ExerciseTitle" id='exerciseTitle' placeholder='Insert Exercise Title'>
+             </td>
+           </tr>
+         </table>
+       </td>
+     </tr>
+   </table>
+
+   <!-- This container includes the editable content div (container) in which the user can type in the text that will be used for the exercise (i.e. in which the user will select words to make into blanks). It also contains two buttons: "Make Blank" which will be clicked once a selection of word(s) has been made to make these words 'blanks' and "Remove Last Blank" which will remove the last word that has been selected and marked as 'blank' -->
+   <table class="blanksTable">
+   	<tr>
+   		<td>
+   		    <div contenteditable="true" id='userInput' onpaste="OnPaste_StripFormatting(this, event);"  data-text="Input your text here. Highlight a word you wish to blank and click 'Make Blank' below."></div>
+   		</td>
+   	</tr>
+   	<tr>
+   		<td>
+   		    <input type="button" value="Make Blank" id='makeBlank' class="button" onmousedown="getSelText()"/>
+        	<input type="button" value="Remove Last Blank" id="removeBlank" class="button" onmousedown="removeSelText()"/>
+   		</td>
+   	</tr>
+   </table>
+
+<!-- This table contains the buttons that user can use while creating an exercise. These include a "Preview" button that will display a preview of the quiz created so far, and a "Save" button that will enable the user to save either online or offline by opening the corresponding modal -->
+  <table class="saveAndQuitButtons">
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+    <td>
+      </td>
+    <td class="saveAndQuit effectButton">
+        <input type="button" class="button" value="Preview" onmousedown='compareText();writeExercise(this.form, selects.length, true);previewExercise(this.form);' id="compare"/>
+      </td>
+      <td class="saveAndQuit effectButton">
+        <input type="button" class="button" value="Save" id="Save" data-toggle="modal" data-target="#myModalSave"/>
+      </td>
+    </tr>
+  </table>
+
+        <textarea name="selectedtext" id='selectedText' hidden rows="10" readonly cols="50"></textarea>
+  </form>
+  </div>
+  <textarea hidden readonly style="border: none" name="text" id='previewText' rows="10" cols="50"></textarea>
+  <textarea hidden name="text" id='exerciseSource' rows="10" cols="50"></textarea>
+
+<!-- This container contains the "help" button on which the user can click to open the modal which displays information on this feature -->
+    <div class="helpButton">
+  	<input type="button" class="iconFont" value="help_outline" id="help" onClick="helpBtn();"/>
+  </div>
+
+<!-- This modal is displayed once the user clicks on "Save". It includes two buttons: "Online" which enables the user to save the newly created exercise onto the dashboardand and "Offline" which allows the user to save the exercise as an html file on their device -->
+ <div class="container">
+<div id="myModalSave" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Save</h2>
+    </div>
+    <div class="modal-body">
+         <p><b>Would you like to save the created exercise online or offline?</b></p>
+         <p><i>Note: If saving online, your exercise can be accessed from the dashboard</i></p>
+         <div class="buttonsTable">
+         <table class="buttonsSaving">
+           <tr>
+             <td class="empty">
+             </td>
+             <td class="empty">
+             </td>
+             <td class="empty">
+             </td>
+            <td class="effectButton savingButtons">
+             <input type="button" class="btn btn-default button" data-dismiss="modal" onClick="compareText();writeExercise(this.form, selects.length, true);saveTextAsFileOnline();" value="Online"/>
+             </td>
+            <td class="effectButton savingButtons">
+              <input type="button" class="btn btn-default button" data-dismiss="modal" onClick="compareText();writeExercise(this.form, selects.length, false);saveTextAsFileOffline();" value="Offline"/>
+            </td>
+           </tr>
+        </table>
+        </div>
+       </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- This modal is opened once the "help" button is clicked. It includes some information on how to create and how to answer blanks exercises -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Fill in the Blanks - Help</h2>
+    </div>
+    <div class="modal-body">
+      <p>The Blanks feature allows the user to create fill in the blanks exercises. Multiple words can be selected from a text. Users will then guess which words are missing from the text. Automatic scoring is included and will tell the user how many words they filled in correctly. The feature allows blanking selected words. To create a gap exercise, enter text into the box provided. To create a blank, highlight the word and click on the Make Blank button. You can repeat this process to create more blanks. Once the text is edited to preference, you can save the exercise and share it with other users. If you want to try the exercise out as a user, then click on the Preview button or save it online and open it on your Dashboard. This allows you to test it out and see how the finished exercise will run. </p>
+
+    </div>
+    <div class="modal-footer">
+
+    </div>
+  </div>
+
+</div>
+
+<!-- Contact bar for the bottom of the page. Includes links to both the About and Contact Us pages -->
+<div class="contactBar">
+       <table class="contactTable">
+           <tr>
+               <td id="KCL">King&#39s&nbspCollege&nbspLondon&nbspModern&nbspLanguage&nbspCentre</td>
+               <td>
+                   <table>
+                       <tr>
+                           <td id="About">
+                               <input type="button" value="About" class="navBarElementNormal" />
+                           </td>
+                           <td id="Contact">
+                               <input type="button" value="Contact Us" class="navBarElementNormal" />
+                           </td>
+                       </tr>
+                   </table>
+               </td>
+           </tr>
+       </table>
+   </div>
+
+<!-- This modal is used to display information to the user that is creating the quiz. These may include, for instance, reminders to add a title to the quiz if the user forgot to do so -->
+<div id="myModal1" class="modal1">
+  <div class="modal-content1">
+    <div class="modal-header1">
+      <span class="close1">&times;</span>
+      <h3 id='modalText'></h3>
+    </div>
+  </div>
+ <script type="text/javascript" src="js/modal.js"></script>
+ <script type='text/javascript' src='https://belooga.000webhostapp.com/js/modal.js'></script>
+ <script type='text/javascript' src='js/blank.js'></script>
+ <script type='text/javascript' src='https://belooga.000webhostapp.com/js/blank.js'></script>
+ <script type="text/javascript" src="js/commonLinks.js"></script>
+ <script type='text/javascript' src='https://belooga.000webhostapp.com/js/commonLinks.js'></script>
+ <script type="text/javascript" src="js/commonSignedIn.js"></script>
+</body>
+</html>

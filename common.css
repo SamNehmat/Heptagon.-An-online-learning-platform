@@ -1,0 +1,450 @@
+/*css that is common on all pages*/
+
+/*all text on the page has the following
+font-family and color*/
+*{
+  font-family: 'roboto';
+  color: #020335;
+}
+
+/*elements with this class have the
+material icons font-family which turns
+the text value into an specific icon
+and some additional styling*/
+.iconFont{
+  font-family: 'Material Icons';
+  color: #020335;
+  font-size: 20px;
+  background-color: rgba(0,0,0,0);
+}
+
+
+/*all input elements have the following styles*/
+input{
+  border-radius: 8px;
+  border-color: #020335;
+  font-size: 20px;
+  color: #020335;
+  border: 1px;
+}
+
+/*all input buttons have the following styles*/
+input[type=button]{
+  cursor: pointer;
+  background-color: rgba(0,0,0,0);
+  outline: none;
+}
+
+/*removes the outline of the input fields on all pages*/
+input[type=text], input[type=textarea], textarea, input[type=password]{
+  outline: none;
+}
+
+
+/*all elements in the class button
+have the following styles*/
+.button{
+  height: 46px;
+  width: 220px;
+  background-color: #020335;
+  border-radius: 4px;
+  font-size: 18px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 42px;
+}
+
+/*whole nav bar*/
+.navbar{
+  height: 45px;
+  background-color: #020335;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  margin: 0 auto;
+  font-weight: bold
+}
+
+/*styles navbar content*/
+.navContent{
+  border-spacing: 5px;
+}
+
+/*styles navbarcontent tds*/
+.navContent td{
+  color: #FFFFFF;
+  width: 100%;
+  line-height: 0px;
+}
+
+/*styles left of navbar*/
+.navBarLeft{
+  text-align:  left;
+  margin-top: -4px;
+}
+
+/*styles right of navbar*/
+.navBarRight{
+  text-align: right;
+}
+
+/*styles bottom navbar*/
+.contactBar{
+  height: 45px;
+  background-color: #020335;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+/*style kcl text on bottom*/
+#KCL{
+  width: 10000px;
+  padding-left: 15px;
+}
+
+/*style about button on bottom*/
+#About{
+  padding-right: 20px;
+}
+
+/*style contact button on bottom*/
+#Contact{
+  padding-right: 10px;
+  text-align: right;
+}
+
+/*styles conatct tds*/
+.contactTable td{
+  color: #FFFFFF;
+  line-height: 35px;
+}
+
+/*styles the logo in the navbar*/
+#logoNav
+{
+  width: 27px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+/*turns the cursor into pointer on hover*/
+#logoNav:hover{
+  cursor: pointer;
+}
+
+/*every image in the navbar*/
+.navbar img{
+  width: 35px;
+  border-radius: 7px;
+}
+
+/*style the create button*/
+#createNav{
+  width: 100px;
+  padding-right: 20px;
+}
+
+/*styles navbar elements*/
+.navBarElement{
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0);
+  font-weight: bold;
+  margin-left: -10px;
+}
+
+/*styles smaller navbar elements*/
+.navBarElementSmall{
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/*styles normal navbar elements*/
+.navBarElementNormal{
+  color: #FFFFFF;
+  background-color: rgba(0,0,0,0);
+  font-size: 16px;
+  font-weight: normal;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+/*styles app name*/
+#appName {
+  font-size: 20px;
+  width: 100px;
+  padding-right:40px;
+}
+
+/*styles profile pic*/
+#profilePic{
+  border-radius: 400px;
+  width: 27px;
+}
+
+/*styles profile pic td*/
+#profilePicTD{
+  padding-right: 10px;
+}
+
+/*styles username td*/
+#usernameTD{
+  padding-right: 10px;
+  font-weight: normal;
+}
+
+/*styles sign out button*/
+.signOutButton{
+  display: none;
+  background-color: #020335;
+  border-top: 1px solid #FFFFFF;
+  width: 130px;
+  height: 33px;
+  position: fixed;
+  top: 45px;
+  right: 0;
+  z-index: 10000;
+  margin: 0 auto;
+}
+.signOutButton input[type="button"]{
+  width: 70px;
+  height: 23px;
+  font-size: 14px;
+  line-height: 0;
+}
+.signOutButton input[type="button"]:hover{
+  text-decoration: underline;
+}
+
+/*styles lock icon*/
+#lock{
+  color: #FFFFFF;
+  font-size: 12px;
+  padding-left: 12px;
+}
+
+/*styles log out button*/
+#logOutButton{
+  margin-top: 1px;
+  margin-left: -5px;
+
+}
+
+/*styles help button*/
+#help{
+  font-size: 40px;
+  color: #020335;
+  position: fixed;
+  bottom: 55px;
+  right: 10px;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    bottom-margin: 200px;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: #FFFFFF;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    background: transparent;
+}
+
+.close:hover,
+.close:focus {
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*modal header*/
+.modal-header {
+    padding: 2px 16px;
+    background-color: #020335;
+    color: white;
+}
+
+/*sets texts in modal white*/
+#myModal h2, #myModalSave h2, #myModalNorm h2{
+  color: #FFFFFF;
+}
+
+/*when button is disabled make it grey*/
+.saveAndQuitButtons input[type=button]:disabled{
+  background-color: #c4c4c4;
+  color: #020335;
+}
+
+/*sets width of empty*/
+.empty{
+  width: 200px;
+}
+
+/*modal body*/
+.modal-body {
+  padding: 2px 16px;
+  font-size: 20px;
+  color: #020335;
+  line-height: 25px;
+  text-align: justify;
+}
+
+/*modal footer*/
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #020335;
+    color: white;
+    height: 20px;
+}
+
+/* The Modal (background) */
+.modal1 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    -webkit-animation-name: fadeIn; /* Fade in the background */
+    -webkit-animation-duration: 0.4s;
+    animation-name: fadeIn;
+    animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content1 {
+    position: fixed;
+    bottom: 0;
+    background-color: #fefefe;
+    width: 100%;
+    -webkit-animation-name: slideIn;
+    -webkit-animation-duration: 0.4s;
+    animation-name: slideIn;
+    animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close1 {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+    background: transparent;
+}
+
+.close1:hover,
+.close1:focus {
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header1 {
+    padding: 2px 10px;
+    color: white;
+}
+
+.modal-title{
+	color: #FFFFFF;
+	font-size: 36px;
+	font-weight: bold;
+	padding: 0;
+	margin: 10px;
+}
+
+.modal-dialog{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.buttonsSaving{
+  border-spacing: 15px;
+}
+
+.empty{
+  width: 200px;
+}
+
+.buttonsTable{
+  display: block;
+  text-align: right;
+}
+
+.savingButtons{
+  background-color: #020335;
+  color: #FFFFFF;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+    from {bottom: -300px; opacity: 0}
+    to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0}
+    to {opacity: 1}
+}

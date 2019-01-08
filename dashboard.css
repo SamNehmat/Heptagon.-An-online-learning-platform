@@ -1,0 +1,307 @@
+/*css for the dashboard*/
+
+/*left table*/
+.projects{
+  background-color: #E6E6E6;
+  width: 252px;
+  border-radius: 5px;
+  padding: 7px;
+  color: #020335;
+  border-spacing: 8px;
+}
+
+/*left table tds*/
+.projects td{
+  border-radius: 5px;
+  font-size: 20px;
+  height: 44px;
+}
+
+/*unselected folders*/
+.unselected{
+  background-color: #FFFFFF;
+  width: 218px;
+  height: 45px;
+  text-align: left;
+}
+
+/*selected folders*/
+.selected{
+  background-color: #020335;
+  color: #FFFFFF;
+  width: 218px;
+  height: 45px;
+  text-align: left;
+}
+
+/*add new button*/
+#addNew{
+  font-size: 18px;
+  background-color: rgba(0,0,0,0);
+}
+
+/*right table*/
+.exercises, .myExercises{
+  background-color: #E6E6E6;
+  width: 709px;
+  border-radius: 4px;
+  color: #020335;
+  border-spacing: 7px;
+  padding: 8px;
+  height: 20px;
+}
+
+/*right table tds*/
+.exercises td, .myExercises td{
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 20px;
+  background-color: #ffffff;
+  height: 10px;
+}
+
+/*right table*/
+.myExercises{
+  margin-top: -10px;
+}
+
+/*styles the first row in exercises(aka the title)*/
+#firstRow{
+  background-color: #E6E6E6;
+}
+
+/*styles the first row in exercises(aka the title)*/
+#exercises{
+  font-size: 36px;
+  font-weight: bold;
+  background-color: #E6E6E6;
+}
+
+/*underlines the exrcise title when hovering on it*/
+.selectExercise:hover{
+  text-decoration: underline;
+}
+
+/*whole dashboard*/
+.dashboard{
+  display: block;
+  width: 981px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 55px;
+  border-spacing: 10px;
+  margin-bottom: 60px;
+}
+
+/*left and right of dashboard*/
+.dashboardTD{
+  vertical-align: top;
+}
+
+/*delete icon td*/
+td.editDeleteIcon {
+  background-color: #E6E6E6;
+  width: 23px;
+}
+
+/*add new exercise button*/
+.rightAlign {
+  text-align: center;
+  width: 23px;
+  background-color: #E6E6E6;
+  padding: 0;
+}
+
+/*add new exercise icon*/
+#createNew{
+  font-weight: normal;
+  font-size: 36px;
+  background-color: #E6E6E6;
+  width: 50px;
+  height: 50px;
+  text-align: right;
+}
+
+/*add new exercise td*/
+#createNewTD{
+  width: 50px;
+  height: 50px;
+  background-color: #E6E6E6;
+  text-align: right;
+}
+
+/*all imgages in the popup*/
+.popup img{
+  height: 90px;
+  width: 90px;
+  border-radius: 8px;
+  border-width: 1px;
+  cursor: pointer;
+}
+
+/*the popup*/
+.popup{
+  text-align: center;
+  width: 588px;
+  border-spacing: 18px;
+  background-color: #FFFFF;
+  margin-left: -10px;
+}
+
+/*buttons table in modal*/
+#buttonTableModal{
+  width: 500px;
+  border-spacing: 18px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*buttons in modal*/
+.cancelButton, .cancelBtn{
+  background-color: #C4C4C4;
+  color: #020335;
+  width: 220px;
+  height: 47px;
+  border-radius: 4px;
+  padding: 0;
+}
+
+/*create button*/
+.createButton{
+  width: 220px;
+  height: 47px;
+  background-color: #020335;
+  color: #FFFFFF;
+  border-radius: 4px;
+  padding: 0;
+}
+
+/*buttons in modal*/
+#createBtn, #cancelBtn{
+  width: 220px !important;
+}
+
+/*modal*/
+#exerciseModal{
+  width: 600px;
+}
+
+/*folder name*/
+#folderName{
+  height: 30px;
+  width: 542px;
+  border: 1px solid #C4C4C4;
+  border-radius: 4px;
+}
+
+/*placeholder style for firefox*/
+#folderName::-moz-placeholder{
+  font-style: italic;
+  font-weight: normal;
+}
+
+/*placeholder style for opera, safari and chrome*/
+#folderName::-webkit-input-placeholder{
+  font-style: italic;
+  font-weight: normal;
+}
+
+/*modal*/
+label > input{
+  visibility: hidden;
+  position: absolute;
+}
+label > input + img{
+  cursor: pointer;
+  border: 1px solid transparent;
+  display: inline-block;
+}
+label > input:checked + img{
+  border: 1px solid #020335;
+}
+
+/*buttons*/
+.okAndCancelBtn{
+  margin-top: 12px;
+  border-spacing: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*buttons td*/
+.okAndCancelBtn td{
+  height: 47px;
+}
+
+/*buttons table row first td*/
+.okAndCancelBtn tr td:nth-child(1){
+  background-color: #020335;
+  color: white;
+  text-align: center;
+}
+
+/*buttons table row second td*/
+.okAndCancelBtn tr td:nth-child(2){
+  background-color: #C4C4C4;
+  color: #020335;
+  text-align: center;
+}
+
+/*modal content*/
+.modal-content{
+  width: 588px !important;
+  margin-bottom: 200px;
+}
+
+/*underline text when hover on add new folder button*/
+#addNew:hover{
+  text-decoration: underline;
+}
+
+/*button animation*/
+.effectButton {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(237,162,181);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:hover, .effectButton:focus, .effectButton:active {
+  color: white;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:hover:before, .effectButton:focus:before, .effectButton:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  outline: none;
+  border-radius: 4px;
+}

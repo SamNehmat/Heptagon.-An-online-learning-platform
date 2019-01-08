@@ -1,0 +1,421 @@
+/*css for the blanks feature */
+
+/*styles the title creation row*/
+.blanksCreateTitleRow{
+ margin-top: 45px;
+ width: 963px;
+ margin-left: auto;
+ margin-right: auto;
+ margin-bottom: -12px;
+}
+
+/*styles the left of the title row*/
+#blanksCreateTitleRowLeft{
+ display: inline;
+ border-spacing: 10px;
+}
+
+/*style the blanks icon*/
+#blanksIconCreate{
+ width: 37px;
+ height: 37px;
+ border-radius: 4px;
+}
+
+/*sytles the blanks title*/
+#blanksTitle{
+ font-size: 32px;
+ font-weight: bold;
+ height: 60px;
+ width: 750px;
+}
+
+/*syles the title of the submit page*/
+#blanksSubmitTitle{
+ font-size: 32px;
+ font-weight: bold;
+ height: 60px;
+ width: 750px;
+}
+
+/*style all placeholders for firefox*/
+::-moz-placeholder{
+ font-style: italic;
+ font-weight: normal;
+ font-size: 20px;
+}
+
+/*style all placeholders for
+safari, opera and chrome*/
+::-webkit-input-placeholder {
+ font-style: italic;
+ font-weight: normal;
+ font-size: 20px;
+}
+
+/*style the exercise Title
+placeholders for firefox*/
+#exerciseTitle::-moz-placeholder{
+ font-style: italic;
+ font-weight: normal;
+ font-size: 25px;
+}
+
+/*style the exercise Title for
+safari, opera and chrome*/
+#exerciseTitle::-webkit-input-placeholder{
+ font-style: italic;
+ font-weight: normal;
+ font-size: 25px;
+}
+
+/*styles the exercise title*/
+#exerciseTitle{
+ font-size: 32px;
+ font-weight: bold;
+ width: 705px;
+ border-radius: 0;
+}
+
+/*styles the table containing the
+blanks input area and the
+make and remove blank buttons*/
+.blanksTable{
+	margin-right: auto;
+	margin-left: auto;
+	width: 963px;
+	border-radius: 4px;
+	border-spacing: 15px;
+	background-color: #C4C4C4;
+}
+
+/*rounds the left of the results table rows*/
+.resultsTableRow td:nth-child(2){
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+/*rounds the right of the results table rows*/
+.resultsTableRow td:nth-child(5){
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+/*styles the input area where users
+write the text they wish to blank*/
+#userInput{
+	width: 922px;
+	height: 400px;
+	font-size: 20px;
+	border-radius: 4px;
+	border: none;
+	padding: 5px;
+	line-height: 1.5em;
+	text-align: justify;
+	outline: none;
+	color: #020335;
+	font-weight: normal;
+}
+
+/*styles the text that is the in
+the user input field before anything is in it */
+#userInput:before{
+	font-style: italic;
+	color: #C4C4C4;
+	font-weight: normal;
+}
+
+/*styles the make and remove blank buttons*/
+#makeBlank, #removeBlank{
+	background-color: #020335;
+	color: #FFFFFF;
+}
+
+/*adds a margin to the remove blank button*/
+#removeBlank{
+	margin-left: 10px;
+}
+
+/*styles the class buttons*/
+.buttons{
+	margin-top: 10px;
+	margin-bottom: 60px;
+	border-spacing: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 963px;
+	height: 40px;
+	text-align: right;
+}
+
+/*margins for buttons*/
+.buttons input[type="button"]{
+	margin-left: 20px;
+	margin-right: -10px;
+}
+
+/*styles the table in practice blanks*/
+.blanksPractice{
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #C4C4C4;
+	border-radius: 4px;
+	width: 963px;
+	border-spacing: 20px;
+}
+
+/*styles the tds in the blanksPractice table*/
+.blanksPractice td{
+	width: 922px;
+	height: 200px;
+	background-color: #FFFFFF;
+	border-radius: 4px;
+	vertical-align: top;
+	padding: 5px;
+	line-height: 1.5em;
+	font-size: 20px;
+	text-align: justify;
+}
+
+/*gives the text input field a border*/
+
+.blanksPractice input[type="text"]{
+	border: 1px solid #C4C4C4;
+}
+
+/*styles the results tab (the summary/totals part)*/
+.blanksResultsTab{
+ background-color: #C4C4C4 ;
+ width: 963px;
+ border-radius: 4px;
+ margin-left: auto;
+ margin-right: auto;
+ margin-top: 12px;
+}
+
+/*adds a padding to the tds in the tab*/
+.blanksResultsTab td{
+ padding-left: 10px;
+}
+
+/*sets the width of the correct answers column*/
+#rightAnswersTD{
+    width: 241px;
+}
+
+/*styles the results table*/
+.blanksResultsTable{
+ width: 963px;
+ background-color: #C4C4C4 ;
+ border-radius: 4px;
+ border-spacing: 0px;
+ margin-top: 12px;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+/*styles the headers of the table*/
+#header td{
+ padding-top: 10px;
+ padding-bottom: 10px;
+}
+
+/*styles the question result tds*/
+#questionResultTD{
+    padding-left: 10px;
+    width: 80px;
+}
+
+/*styles the tds in each result row*/
+.resultsTableRow td{
+ background-color: #FFFFFF ;
+ padding-left: 5px;
+ height: 40px;
+}
+
+/*styles the  padding td*/
+#paddingTD{
+    width: 1px;
+    background-color: #C4C4C4 ;
+}
+
+/*rounds the left of the table row*/
+#questionResultNo{
+ border-top-left-radius: 4px;
+ border-bottom-left-radius: 4px;
+}
+
+/*styles the right of the teble row*/
+#resultCheck, #resultClear{
+ border-top-right-radius: 4px;
+ border-bottom-right-radius: 4px;
+ font-size: 25px;
+}
+
+/*sets the height of the padding row*/
+#paddingRow{
+  height: 10px;
+}
+
+/*styles the tick*/
+td.correct {
+ font-size: 15px;
+ color: #1CD268 ;
+ font-weight: 900;
+ width: 4px;
+}
+
+/*styles the cross*/
+td.wrong{
+ font-size: 15px;
+ color: #D21C1C ;
+ webkit-text-stroke: 4px black;
+ font-weight: 900;
+ width: 4px;
+}
+
+/*styles cross and check*/
+td.wrong img, td.correct img{
+ height: 20px;
+}
+
+/*sets the width of the correct
+answer column*/
+#correctCol{
+  width: 360px;
+}
+
+/*sets the width of the your
+answer column*/
+#yourAnswerTD{
+  width: 360px;
+}
+
+/*sets the style of the question numbers*/
+.questionNumberCreate{
+ font-size: 20px;
+ border: none
+}
+
+/*styles the correct/original text
+on the result page*/
+.correctText{
+	border-radius: 4px;
+	margin-bottom: 60px;
+	margin-top: 12px;
+	background-color: #C4C4C4;
+	border-spacing: 10px;
+	width: 963px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*styled the first child of the correct text*/
+.correctText tr:nth-child(1) td{
+	background-color: #C4C4C4 !important;
+	font-size: 20px;
+	text-align: justify;
+	vertical-align: middle;
+}
+
+/*every td in the correct text table*/
+.correctText td{
+	width: 922px;
+	background-color: #FFFFFF;
+	border-radius: 4px;
+	vertical-align: top;
+	padding: 5px;
+	line-height: 1.5em;
+	font-size: 20px;
+	text-align: justify;
+}
+
+/*underlines and maked the blanked works red*/
+div > span{
+    color : red;
+	text-decoration: underline;
+	font-weight: bold;
+}
+[contenteditable] {
+    -moz-appearance: textfield-multiline;
+    -webkit-appearance: textarea;
+    border: 1px solid gray;
+    overflow: auto;
+	background: white;
+    padding: 2px;
+    resize: both;
+    display: inline-block;
+    font-weight: normal;
+}
+[contentEditable=true]:empty:not(:focus):before{
+        content:attr(data-text)
+}
+
+
+/*button animation*/
+.effectButton {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(237,162,181);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:hover, .effectButton:focus, .effectButton:active {
+  color: white;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:hover:before, .effectButton:focus:before, .effectButton:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  outline: none;
+  border-radius: 4px;
+}
+
+
+/*table for the buttons*/
+.saveAndQuitButtons {
+  margin-bottom: 30px;
+  width: 966px;
+  border-spacing: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -5px;
+  margin-bottom: 60px;
+}
+
+/*styles the buttons*/
+.saveAndQuit{
+  text-align: right;
+  width: 220px;
+  background-color: #020335;
+  border-radius: 4px;
+}

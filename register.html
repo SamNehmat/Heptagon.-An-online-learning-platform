@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel='shortcut icon' href='images/transparent_logo.png'>
+<title>Belooga - Register</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,700|Oswald:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="css/register.css"/>
+<link type="text/css" rel="stylesheet" href="css/common.css"/>
+<script type="text/javascript" src="../../../jquery/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="//cdn.auth0.com/w2/auth0-7.0.3.min.js"></script>
+<script type="text/javascript" src="js/auth.js"></script>
+</head>
+<body>
+
+
+<!-- Navigation bar - includes logo and app name, both linking to the homepage (index.html), and register and sign in buttons linking to their respective pages -->
+
+  <div class="navbar">
+    <table class="navContent">
+      <tr>
+        <td>
+          <table class="navBarLeft">
+            <tr>
+              <td id="logoNav">
+                <img src="images/navLogo.png" onClick="location.reload();location.href='index.html'"/>
+              </td>
+              <td id="appName">
+                <input type="button" onClick="location.reload();location.href='index.html'" value="Belooga" class="navBarElement"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="navBarRight">
+            <tr>
+              <td class="registerTD">
+                <input type="button" value="Register" onClick="location.reload();location.href='register.html'" class="registerTD"/>
+              </td>
+              <td class="signInTD">
+                <input type="button" value="Sign In" onClick="location.reload();location.href='signIn.html'" class="signInTD"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
+
+
+  <!-- Container for usernmane and password input fields for user registration -->
+
+
+<div class="registerPage">
+  <p id="registerTitle">Register</p>
+  <div class="registerContent">
+     <ul>
+    <li>Username</li>
+    <li>
+      <input id="usernameField" type="text" name="usernameRegister" autofocus/>
+    </li>
+    <li>Password</li>
+    <li>
+      <input id="passwordField" type="password" name="passwordRegister"/>
+    </li>
+  </ul>
+  <div class="button registerButton effectButton">
+    <input type="button" value="Register" class="registerButton" id="btn-register"/>
+  </div>
+  </div>
+</div>
+
+
+	<!-- Contact bar for the bottom of the page. Includes links to both the About and Contact Us pages -->
+
+
+  <div class="contactBar">
+    <table class="contactTable">
+      <tr>
+        <td id="KCL">King&#39s&nbspCollege&nbspLondon&nbspModern&nbspLanguage&nbspCentre</td>
+        <td>
+          <table>
+            <tr>
+              <td id="About">
+                <input type="button" value="About" class="navBarElementNormal"/>
+              </td>
+              <td id="Contact">
+                <input type="button" value="Contact Us" class="navBarElementNormal"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+<script type="text/javascript" src="js/commonLinks.js"></script>
+</html>

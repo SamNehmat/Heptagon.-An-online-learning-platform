@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="images/transparent_logo.png">
+<title>Belooga - Dashboard</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,700|Oswald:300,400,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script type="text/javascript" src="https://belooga.000webhostapp.com/jquery/jquery-3.1.1.min.js"></script>
+<link type="text/css" rel="stylesheet" href="css/dashboard.css"/>
+<link type="text/css" rel="stylesheet" href="css/common.css"/>
+<script type="text/javascript" src="js/dashboard.js"></script>
+<script type="text/javascript" src="js/modal.js"></script>
+<script type="text/javascript" src="js/commonLinks.js"></script>
+<script type="text/javascript" src="js/commonSignedIn.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--<script>
+if (localStorage.getItem('kNumber') === null) {
+  alert('Please sign in first.');
+  window.location.href = "https://belooga.000webhostapp.com/signIn";
+}
+</script>-->
+<script type="text/javascript" src="//cdn.auth0.com/w2/auth0-7.0.3.min.js"></script>
+<script type="text/javascript" src="js/auth.js"></script>
+</head>
+<body>
+
+<!-- Navigation bar - includes the application's logo and name that redirect to the dashboard when clicked. Also includes the currently signed in user's k-number (button) -->
+
+  <div class="navbar">
+    <table class="navContent">
+      <tr>
+        <td>
+          <table class="navBarLeft">
+            <tr>
+              <td id="logoNav">
+                <img src="images/navLogo.png" />
+              </td>
+              <td id="appName">
+                <input type="button" value="Belooga" class="navBarElement"/>
+              </td>
+              <td id="createNav">
+                  <input type="button" value="Dashboard" class="navBarElementSmall" />
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="navBarRight">
+            <tr>
+              <td id="profilePicTD">
+                <img id="profilePic" src="images/profile.png"/>
+              </td>
+              <td id="usernameTD">
+                <input type="button" value="k1502609" class="navBarElementNormal"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+<!-- This container is displayed when the k-number is clicked and displays the "Sign Out" button which logs the user out once clicked-->
+    </table>
+   <div class="signOutButton">
+      <table>
+        <tr>
+          <td class="iconFont" id="lock">lock</td>
+          <td>
+            <input class="button" id="logOutButton" type="button" value="Sign Out"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+<!-- This table is where all the user's created exercises will be added to. It includes a button which, once clicked, opens a modal that allows the user to select the kind of exercise to create and proceeds to the corresponding feature's create page -->
+  <table class="dashboard">
+    <tr>
+      <td class="dashboardTD">
+          <table class="projects">
+          </table>
+      </td>
+      <td class="dashboardTD">
+          <table class="exercises">
+            <tr id="firstRow">
+              <td id="exercises">Exercises</td>
+              <td colspan="2" id="createNewTD">
+                <input type="button" id="createNew" class="rightAlign iconFont" value="add_circle_outline" onclick="displayModal();"/>
+              </td>
+            </tr>
+            <tr> </tr>
+          </table>
+          <table class="myExercises">
+            <tr><td><p>Select a folder on the left</p></td></tr>
+          </table>
+      </td>
+    </tr>
+  </table>
+
+<!-- This modal opens once the Add button in the table above is clicked. It includes radio buttons to represent each feature and two buttons: "Create" to proceed to the create page of the selected feature and "Cancel" to return to the dashboard -->
+  <div id="myModal" class="modal">
+  <div class="modal-content" id="exerciseModal">
+    <div class="modal-header">
+      <h2>Select an Exercise</h2>
+    </div>
+    <div class="modal-body">
+       <form>
+        <table class="popup">
+          <tr>
+            <td>
+              <label>
+                <input type="radio" name="iconRadio" id="MCQRadio" value="MCQIconRadio"/>
+                <img src="images/MCQ.jpg"/>
+              </label>
+            </td>
+            <td>
+              <label>
+                <input type="radio" name="iconRadio" id="hangmanRadio" value="HangmanIconRadio"/>
+                <img src="images/hangman.jpg"/>
+              </label>
+            </td>
+            <td>
+              <label>
+                <input type="radio" name="iconRadio" id="matcherRadio" value="MatcherIconRadio"/>
+                <img src="images/matcher.jpg"/>
+              </label>
+            </td>
+            <td>
+              <label>
+                <input type="radio" name="iconRadio" id="blanksRadio" value="BlanksIconRadio"/>
+                <img src="images/gaps.jpg"/>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>MCQ</td>
+            <td>Hangman</td>
+            <td>Matcher</td>
+            <td>Blanks</td>
+          </tr>
+        </table>
+        <table id="buttonTableModal">
+        	<tr>
+        		<td id="createBtn" class="button effectButton createButton" colspan="2">
+              		<input type="button" value="Create" onClick="openCreateExercise(this.form)" class="createButton"/>
+            	</td>
+            	<td id="cancelBtn"  class="effectButton cancelButton" colspan="2">
+              		<input type="button"value="Cancel" onClick="closeExerciseModal()" class="cancelButton"/>
+          		</td>
+        	</tr>
+        </table>
+      </form>
+    </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+
+<!-- Contact bar for the bottom of the page - includes two buttons "About" and "Contact Us" which redirects the user to the corresponding pages once clicked -->
+  <div class="contactBar">
+    <table class="contactTable">
+      <tr>
+        <td id="KCL">King&#39s&nbspCollege&nbspLondon&nbspModern&nbspLanguage&nbspCentre</td>
+        <td>
+          <table>
+            <tr>
+              <td id="About">
+                <input type="button" value="About" class="navBarElementNormal"/>
+              </td>
+              <td id="Contact">
+                <input type="button" value="Contact Us" class="navBarElementNormal"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+<!-- This modal is displayed when the user clicks on the "Add new" folder button. It contains an input field in which the user can enter the name of the folder they wish to create. It also includes two buttons: "OK" to proceed to the creation of the folder and "Cancel" to return to the dashboard -->
+<div class="modal fade" id="myModalNorm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                       <span data-dismiss="modal" class="close1">&times;</span>
+                <h2>Add New Folder</h2>
+            </div>
+            <div class="modal-body">
+            	<div class="newFolderModal">
+                    <p>Please enter the name of your new folder</p>
+                  <div>
+                      <input type="text" class="form-control" id="folderName" id="folderName" placeholder="Enter the name of your new folder here"/>
+                  </div>
+                <table class="okAndCancelBtn">
+                	<tr>
+		            	<td class="button effectButton">
+    		            	<input type="button" class="button addNewButtons" id="addNewFolder" onclick="addNewFolder();" value="OK"/>
+	    	        	</td>
+	        	    	<td class="cancelBtn effectButton">
+    	        			<input type="button" class="cancelBtn" data-dismiss="modal" value="Cancel"/>
+        	    		</td>
+        	    	</tr>
+        	    </table>
+        	    </div>
+          	</div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+  
+  
+<!-- Thia modal is displayed to provide prompt, relevant information or alerts to the user when needed -->
+<div id="myModal1" class="modal1">
+  <div class="modal-content1">
+    <div class="modal-header1">
+      <span class="close1">&times;</span>
+      <h3 id='modalText'></h3>
+    </div>
+  </div>
+  </div>
+</body>
+<script type="text/javascript" src="https://belooga.000webhostapp.com/jquery/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/dashboard.js"></script>
+<script type="text/javascript" src="js/modal.js"></script>
+<script type="text/javascript" src="js/commonLinks.js"></script>
+<script type="text/javascript" src="js/commonSignedIn.js"></script>
+<script type="text/javascript" src="js/dashboard.js"></script>
+</html>

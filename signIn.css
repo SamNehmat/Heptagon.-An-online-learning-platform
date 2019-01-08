@@ -1,0 +1,171 @@
+/*css for sign in*/
+
+/*register button in navbar*/
+td.registerTD input.registerTD{
+  width: 66px;
+  padding-right: 20px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+/*sign in button in navbar*/
+td.signInTD, input.signInTD{
+  width: 58px;
+  margin-right: 5px;
+  font-weight: bold;
+  color: #FFFFFF;
+  font-size: 16px;
+}
+
+/*sign in content container*/
+.signInContent {
+  height: 291px;
+  width: 573px;
+  border-color: #020335;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*sign in list*/
+.signInContent ul{
+  list-style-type: none;
+  font-size: 20px;
+  color: #020335;
+  margin-left: -5%;
+}
+
+/*sign in list element*/
+.signInContent li {
+  padding: 0.5%;
+}
+
+/*input fields*/
+#usernameField, #passwordField {
+  height: 44px;
+  width: 542px;
+  border: 1px solid #C4C4C4;
+}
+
+/*sign in button*/
+input.signInButton, div.signInButton{
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 8px;
+  color: #FFFFFF;
+  width: 220px;
+  height: 46px;
+}
+
+/*sign in title*/
+#signInTitle{
+  font-size: 36px;
+  font-weight: bold;
+  color: #020335;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  margin-bottom: 1%;
+  width: 542px;
+}
+
+/*button animation*/
+.effectButton {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(237,162,181);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  outline: none;
+  padding: 0;
+  border-radius: 4px;
+}
+.effectButton:hover, .effectButton:focus, .effectButton:active {
+  color: white;
+}
+.effectButton:hover:before, .effect
+  outline: none;
+  padding: 0;
+  border-radius: 4px;Button:focus:before, .effectButton:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  outline: none;
+  border-radius: 4px;
+}
+
+.effectButton {
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  outline: none;
+  padding: 0;
+  border-radius: 8px;
+}
+.effectButton:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(237,162,181);
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+  outline: none;
+  padding: 0;
+  border-radius: 8px;
+}
+.effectButton:hover, .effectButton:focus, .effectButton:active {
+  color: white;
+  outline: none;
+  padding: 0;
+  border-radius: 8px;
+}
+.effectButton:hover:before, .effectButton:focus:before, .effectButton:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  outline: none;
+  border-radius: 8px;
+}

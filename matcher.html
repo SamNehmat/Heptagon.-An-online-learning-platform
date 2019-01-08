@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel='shortcut icon' href='images/transparent_logo.png'>
+  <title>Belooga - Matcher</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,700|Oswald:300,400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/matcher.css" />
+  <link type="text/css" rel="stylesheet" href="css/common.css" />
+  <script type="text/javascript" src="../../../jquery/jquery-3.1.1.min.js"></script>
+  <script type='text/javascript' src='js/matcher.js'></script>
+	<link rel="stylesheet" type="text/css" href="https://belooga.000webhostapp.com/css/matcher.css">
+	<link rel="stylesheet" type="text/css" href="https://belooga.000webhostapp.com/css/common.css">
+	<script type='text/javascript' src='https://belooga.000webhostapp.com/js/matcher.js'></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    if (localStorage.getItem('kNumber') === null) {
+      alert('Please sign in first.');
+      window.location.href = "https://belooga.000webhostapp.com/signIn";
+    }
+    </script>
+    <script type="text/javascript" src="//cdn.auth0.com/w2/auth0-7.0.3.min.js"></script>
+    <script type="text/javascript" src="js/auth.js"></script>
+
+    <body onLoad=''>
+</head>
+
+<body>
+
+<!-- Navigation bar - includes logo and app name that link to the dashboard. Also contains the k-number of the signed in user -->
+    <div class="navbar">
+        <table class="navContent">
+            <tr>
+                <td>
+                    <table class="navBarLeft">
+                        <tr>
+                            <td id="logoNav">
+                                <img src="images/navLogo.png" />
+                            </td>
+                            <td id="appName">
+                                <input type="button" value="Belooga" class="navBarElement" />
+                            </td>
+                            <td id="createNav">
+                                <input type="button" value="Dashboard" class="navBarElementSmall" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="navBarRight">
+                        <tr>
+                            <td id="profilePicTD">
+                                <img id="profilePic" src="images/profile.png" />
+                            </td>
+                            <td id="usernameTD">
+                                <input type="button" value="k1502609" class="navBarElementNormal" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+
+    <!-- Sign out container. Opened upon clicking on the k-number. Contains a "Sign Out" button that logs the user out -->
+        <div class="signOutButton">
+    	<table>
+        <tr>
+          <td class="iconFont" id="lock">lock</td>
+          <td>
+            <input class="button" id="logOutButton" type="button" value="Sign Out"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+    </div>
+
+<!-- Main page for the creation of a Matcher exercise -->
+    <div>
+        <form>
+        <!-- This is the first container to be displayed on the page. It includes the exercise's logo and an input field for the user to enter the exercise's title. It also includes the number of questions created so far as well as the one the user is currently working on. These are surrounded by left and right arrows to navigate through the questions created in the exercise -->
+            <table class="matcherCreateTitleRow">
+                <tr>
+                    <td>
+                        <table id="matcherCreateTitleRowLeft">
+                            <tr>
+                                <td>
+                                    <img id="matcherIconCreate" src="images/matcher.jpg" />
+                                </td>
+                                <td id="matcherTitle">
+                                    <input type=text size=25 name="ExerciseTitle" id='exerciseTitle' placeholder='Insert Exercise Title'>
+                                </td>
+                                <td>
+                                    <input type="button" value="keyboard_arrow_left" class="iconFont arrowClass arrowLeft" onClick="prevQuestion()" />
+                                </td>
+                                <td></td>
+                                <td id="questionNumberCreate"><input class="questionNumberCreateNumber" type=text size=1 name='questNo' id='questNo' value=1 onChange='checkQuestNo(this.form)' readonly>
+                                </td>
+                                <td>&nbsp&nbsp&nbsp/</td>
+                                <td id="questionNumberCreate"><input class="questionNumberCreateNumber" type=text size=1 name='maxQuestNo' id='maxQuestNo' value=1 readonly>
+                                </td>
+                                <td>
+                                    <input type="button" value="keyboard_arrow_right" class="iconFont arrowClass" onClick='nextQuestion()' />
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <!-- This container includes an input field to enter the question -->
+            <table class="matcherCreateQuestion">
+                <tr>
+                    <td class="questionNumberCreate">Question <input id="matcherQuestionNumber" type=text size=1 name='questNo' style='border:none' value=1 onChange='checkQuestNo(this.form)' readonly></td>
+                </tr>
+                <tr>
+                    <td>
+                        <input class="questionCreateInput" type="textarea" id="question" name="question" />
+                    </td>
+                </tr>
+            </table>
+
+            <!-- This table includes the elements in which the user will create the answers to the the question. The first column includes the words that will be displayed and for which their correponding pair will have to be found. The second column includes the corresponding end of the pair. All the answers in the second column will then be mixed and displayed as options when answering the question. Input fields are used for all of these elements -->
+            <table class="matcherCreateAnswers">
+                <tr>
+                    <td>
+                    </td>
+                    <td id="createAnswer">Left</td>
+                    <td>Right</td>
+                </tr>
+                <tr id='row1'>
+                    <td>1.</td>
+                    <td>
+                        <input type="text" name="left1" id="left1"/>
+                    </td>
+                    <td>
+                        <input type="text" name="answer" id="right1"><label for="TA1"><span><span></span></span></label>
+                    </td>
+                </tr>
+                <tr id='row2'>
+                    <td>2.</td>
+                    <td>
+                        <input type="text" name="left2" id="left2"/>
+                    </td>
+                    <td>
+                        <input type="text" name="answer2" id="right2"><label for="TA2"><span><span></span></span></label>
+                    </td>
+                </tr>
+                <tr id='row3'>
+                    <td>3.</td>
+                    <td>
+                        <input type="text" name="left3" id="left3"/>
+                    </td>
+                    <td>
+                        <input type="text" name="answer3" id="right3"><label for="TA3"><span><span></span></span></label>
+                    </td>
+                </tr>
+                <tr id='row4' style="display: none;">
+                    <td>4.</td>
+                    <td>
+                        <input type="text" name="left4" id="left4"/>
+                    </td>
+                    <td>
+                        <input type="text" name="answer4" id="right4"><label for="TA4"><span><span></span></span></label>
+                    </td>
+                </tr>
+                <tr id='row5' style="display: none;">
+                    <td>5.</td>
+                    <td>
+                        <input type="text" name="left5" id="left5"/>
+                    </td>
+                    <td>
+                        <input type="text" name="answer5" id="right5"><label for="TA5"><span><span></span></span></label>
+                    </td>
+                </tr>
+                <tr id='row6' style="display: none;">
+                    <td>6.</td>
+                    <td>
+                        <input type="text" name="left6" id="left6"/>
+                    </td>
+                    <td>
+                        <input type="text" name="answer6" id="right6"><label for="TA6"><span><span></span></span></label>
+                    </td>
+                </tr>
+                <tr id='row7' style="display: none;">
+                    <td>7.</td>
+                    <td>
+                        <input type="text" name="left7" id="left7"/>
+                    </td>
+                    <td>
+                        <input type="text" name="answer7" id="right7"><label for="TA7"><span><span></span></span></label>
+                    </td>
+                </tr>
+                <tr id='row8' style="display: none;">
+                    <td>8.</td>
+                    <td>
+                        <input type="text" name="left8" id="left8"/>
+                    </td>
+                    <td>
+                        <input type="text" name="answer8" id="right8"><label for="TA8"><span><span></span></span></label>
+                    </td>
+                </tr>
+                <tr id='row9' style="display: none;">
+                    <td>9.</td>
+                    <td>
+                        <input type="text" name="left9" id="left9"/>
+                    </td>
+                    <td>
+                        <input type="text" name="answer9" id="right9"><label for="TA9"><span><span></span></span></label>
+                    </td>
+                </tr>
+                <tr id='row10' style="display: none;">
+                    <td>10.</td>
+                    <td>
+                        <input type="text" name="left10" id="left10"/>
+                    </td>
+                    <td>
+                        <input type="text" name="answer10" id="right10"><label for="TA10"><span><span></span></span></label>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- This container include two buttons: "Add Pair" to add another pair to the list and "Remove Last" to remove the last entered pair -->
+            <table class="addNewMatcherPair">
+                <tr>
+                    <td id="plusIcon">
+                        <img src="images/addIcon.PNG" />
+                    </td>
+                    <td id="addButton">
+                        <input type="button" value="Add Pair" id='addPair' onClick='addNewPair();' />
+                    </td>
+                    <td id="deleteIcon">
+                        <img src="images/deleteIcon.PNG" />
+                    </td>
+                    <td id="deleteButton">
+                        <input type="button" value="Remove Last" id='rmvPair' onClick='removePair();' />
+                    </td>
+                </tr>
+
+            </table>
+<!-- This container contains all the buttons the user can use when creating a Matcher exercise. The "Clear" button clears all fields, the "Preview" button shows the preview of the exercise created so far, the "Save" button allows the user to save and opens a modal to do so and the "Add Question" button adds the question the user is currently working on to the lists of questions in the whole exercise -->
+            <table class="saveAndQuitButtons">
+                <tr>
+                    <td class="saveAndQuit effectButton">
+                        <input type="button" value="Clear" id='clear' onClick='clearForm();' class="button" />
+                    </td>
+                    <td class="saveAndQuit effectButton">
+                      <input type="button" value="Preview" class="button" onClick='writeExercise(this.form,numberOfQuestions, true);previewExercise();' />
+                    </td>
+                    <td class="saveAndQuit effectButton">
+                      <input type="button" value="Save" class="button" id="Save" data-toggle="modal" data-target="#myModalSave"/>
+                    </td>
+                    <td class="saveAndQuit effectButton">
+                        <input type="button" value="Add Question" class="button" id='addQ' onClick='addQuestion(this.form, document.getElementById("questNo").value)' />
+                    </td>
+                </tr>
+            </table>
+            <textarea name="matcherFileSource" ID="exerciseSource" rows=50 cols=180 hidden></textarea>
+        </form>
+    </div>
+
+<!-- This container includes a "help" button which displays the corresponding modal with information once clicked -->
+    <div class="helpButton">
+  	<input type="button" class="iconFont" value="help_outline" id="help" onClick="helpBtn();"/>
+  </div>
+
+<!-- Ths modal is displayed once the "Save" button is clicked. It includes two buttons: "Online" which allows the user to save the newly created exercise onto the dashboard and "Offline" which enables the user to save the exercise on the user's device -->
+<div class="container">
+<div id="myModalSave" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Save</h2>
+    </div>
+    <div class="modal-body">
+         <p><b>Would you like to save the created exercise online or offline?</b></p>
+         <p><i>Note: If saving online, your exercise can be accessed from the dashboard</i></p>
+         <div class="buttonsTable">
+         <table class="buttonsSaving">
+           <tr>
+             <td class="empty">
+             </td>
+             <td class="empty">
+             </td>
+             <td class="empty">
+             </td>
+            <td class="effectButton savingButtons">
+             <input type="button" class="btn btn-default button" data-dismiss="modal" onClick="writeExercise(this.form,numberOfQuestions, true);saveTextAsFileOnline();" value="Online"/>
+             </td>
+            <td class="effectButton savingButtons">
+              <input type="button" class="btn btn-default button" data-dismiss="modal" onClick="writeExercise(this.form,numberOfQuestions, false);saveTextAsFileOffline();" value="Offline"/>
+            </td>
+           </tr>
+        </table>
+        </div>
+       </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<!-- This modal is displayed when the "help" button is clicked. It displays information on how to create a matcher exercise and how to answer the kind of question this feature offers -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Matcher - Help</h2>
+    </div>
+    <div class="modal-body">
+      <p>The Matcher feature creates matching exercises. A list of fixed items appears on the left, with jumbled items on the right in the form of a drop-down menu. The user can click on the drop-down menu to select from the right-hand side of the pair to match the left side. This can be used for matching vocabulary to synonyms or translations, or for ordering sentences to form a sequence or a conversation. The feature includes automatic scoring and will tell the student how many pairings they assembled correctly out of all the questions in the exercise on the results page. To create a matcher exercise, enter a title and question. Enter a pair of words in the left and right boxes. Repeat this process again for a full exercise. If extra pairs are needed, click on the Add Pair button and another pair of boxes will appear under the last one. You can also remove the last pair by clicking on the Remove Pair button. You can add multiple questions. Upon creating the quiz, you can save the quiz and share it with other users. If you want to try the quiz out as a user, then click on the Preview button or save it online and open it on your Dashboard. This allows you to test it out and see how the finished quiz will run. </p>
+
+    </div>
+    <div class="modal-footer">
+
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript" src="js/modal.js"></script>
+<!-- Contact bar for the bottom of the page. Includes links to both the About and Contact Us pages -->
+    <div class="contactBar">
+        <table class="contactTable">
+            <tr>
+                <td id="KCL">King&#39s&nbspCollege&nbspLondon&nbspModern&nbspLanguage&nbspCentre</td>
+                <td>
+                    <table>
+                        <tr>
+                            <td id="About">
+                                <input type="button" value="About" class="navBarElementNormal" />
+                            </td>
+                            <td id="Contact">
+                                <input type="button" value="Contact Us" class="navBarElementNormal" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+<!-- This modal is used to display information to the user that is creating the quiz. These may include, for instance, reminders to add a title to the quiz if the user forgot to do so -->
+<div id="myModal1" class="modal1">
+  <div class="modal-content1">
+    <div class="modal-header1">
+      <span class="close1">&times;</span>
+      <h3 id='modalText'></h3>
+    </div>
+  </div>
+  </div>
+ <script type="text/javascript" src="js/modal.js"></script>
+ <script type='text/javascript' src='https://belooga.000webhostapp.com/js/modal.js'></script>
+ <script type='text/javascript' src='js/matcher.js'></script>
+ <script type='text/javascript' src='https://belooga.000webhostapp.com/js/matcher.js'></script>
+ <script type="text/javascript" src="js/commonLinks.js"></script>
+ <script type="text/javascript" src="js/commonSignedIn.js"></script>
+ <script type='text/javascript' src='https://belooga.000webhostapp.com/js/commonLinks.js'></script>
+</body>
+</html>

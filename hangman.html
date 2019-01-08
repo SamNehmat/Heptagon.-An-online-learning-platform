@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" href="images/transparent_logo.png">
+    <title>Belooga - Hangman</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,700|Oswald:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/common.css" type="text/css">
+    <link rel="stylesheet" href="css/hangman.css" type="text/css">
+    <script type="text/javascript" src="js/hangman.js"></script>
+
+	   <link rel="stylesheet" type="text/css" href="https://belooga.000webhostapp.com/css/hangman.css">
+	   <link rel="stylesheet" type="text/css" href="https://belooga.000webhostapp.com/css/common.css">
+	   <script type='text/javascript' src='https://belooga.000webhostapp.com/js/hangman.js'></script>
+     <script type="text/javascript" src="../../../jquery/jquery-3.1.1.min.js"></script>
+	   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    if (localStorage.getItem('kNumber') === null) {
+      alert('Please sign in first.');
+      window.location.href = "https://belooga.000webhostapp.com/signIn";
+    }
+    </script>
+    <script type="text/javascript" src="//cdn.auth0.com/w2/auth0-7.0.3.min.js"></script>
+    <script type="text/javascript" src="js/auth.js"></script>
+     <meta charset="UTF-8">
+  </head>
+<body>
+
+<!-- Navigation bar - includes logo and app name that link to the dashboard. Also contains the k-number of the signed in user -->
+
+  <div class="navbar">
+    <table class="navContent">
+      <tr>
+        <td>
+          <table class="navBarLeft">
+            <tr>
+              <td id="logoNav">
+                <img src="images/navLogo.png" />
+              </td>
+              <td id="appName">
+                <input type="button" value="Belooga" class="navBarElement"/>
+              </td>
+              <td id="createNav">
+                  <input type="button" value="Dashboard" class="navBarElementSmall" />
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table class="navBarRight">
+            <tr>
+              <td id="profilePicTD">
+                <img id="profilePic" src="images/profile.png" />
+              </td>
+              <td id="usernameTD">
+                <input type="button" value="k1502609" class="navBarElementNormal"/>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+    </table>
+
+    <!-- Sign out container. Opened upon clicking on the k-number. Contains a "Sign Out" button that logs the user out -->
+
+        <div class="signOutButton">
+      <table>
+        <tr>
+          <td class="iconFont" id="lock">lock</td>
+          <td>
+            <input class="button" id="logOutButton" type="button" value="Sign Out"/>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
+  <!-- Main page for the creation of a hangman exercise -->
+
+ <div id='questionArea'>
+   <form name=myForm id=myForm>
+   <!--  First container displayed on the Hangman page. Includes the logo of the feature, an input field to input the title of the exercise, as well as the current number of questions (including the one the user is working on). These are surrounded by left and right arrows to navigate through the newly created questions -->
+     <table class="hangmanCreateTitleRow">
+       <tr>
+         <td>
+           <table id="hangmanCreateTitleRowLeft">
+             <tr>
+               <td>
+                 <img id="hangmanIconCreate" src="images/hangman.jpg"/>
+               </td>
+               <td id="hangmanTitle1">
+               	<input type=text size=25 name="ExerciseTitle" id='exerciseTitle' placeholder='Insert Exercise Title'>
+               </td>
+               <td>
+                 <input type="button" value="keyboard_arrow_left" class="iconFont arrowClass arrowLeft" id="prevQuestion" onClick="prevQuestions()"/>
+               </td>
+               <td id="questionNumberCreate"><input type=text class="questionNumberCreateNumber" style="border: none" id='questionNumber' size=1 name='questNo' value=1 readonly></td>
+               <td>/</td>
+               <td><input type=text class="questionNumberCreateNumber" style="border: none" size=1 id='maxQuestion' name='maxQuestNo' value=1 readonly></td>
+               <td>
+                 <input type="button" value="keyboard_arrow_right" class="iconFont arrowClass" id="nextQuestion" onClick="nextQuestions()"/>
+               </td>
+             </tr>
+           </table>
+         </td>
+       </tr>
+     </table>
+     <!-- This container includes a textarea in which the user can enter the question to be answered -->
+     <table class="hangmanBackground questionArea">
+       <tr>
+         <td class="questionNumberCreate">Question:</td>
+       </tr>
+       <tr>
+         <td>
+           <input type=textarea size=100 name="question" class="smallPlaceholder" id='question' placeholder='Insert Question'>
+         </td>
+       </tr>
+     </table>
+     <!-- In this container, the user can use the textarea to input the answer to the question (which will be hiden during the game, only shown once the game is over) -->
+     <table class="hangmanBackground questionArea">
+       <tr>
+         <td class="questionNumberCreate">Answer:</td>
+       </tr>
+       <tr>
+         <td>
+          <input type=textarea size=100 name="answer" class="smallPlaceholder" id='answer' placeholder='Insert Answer (Accepts any character from the Latin alphabet)'>
+         </td>
+       </tr>
+     </table>
+     <!-- This container includes a textarea in which the user can enter a hint that will be displayed upon request during the hangman game -->
+     <table class="hangmanBackground questionArea">
+       <tr>
+         <td class="questionNumberCreate">Hint:</td>
+       </tr>
+       <tr>
+         <td>
+           <input type=textarea size=100 name="hintTextArea" class="smallPlaceholder" id='hintTextArea' placeholder='Insert Hint (Optional)'>
+         </td>
+       </tr>
+     </table>
+     <!-- In this container, the user can use the textarea to input some feedback that will be shown once the hangman game is over -->
+     <table class="hangmanCreateFeedback questionArea">
+       <tr>
+         <td>Feedback:</td>
+       </tr>
+       <tr>
+         <td>
+           <textarea rows="2" cols="80" name="Feedback" class="smallPlaceholder" id='feedback' placeholder='Insert Feedback (Optional)'></textarea>
+         </td>
+       </tr>
+     </table>
+
+     <!-- This container contains all the buttons the user can use when creating a hangman game. The "Clear" button clears all fields, the "Preview" button shows the preview of the game created so far, the "Save" button allows the user to save and opens a modal to do so and the "Add Question" button adds the question the user is currently working on to the lists of questions in the exercise -->
+    <table class="saveAndQuitButtons">
+    <tr>
+    <td class="saveAndQuit effectButton">
+      <input class="button" type="button" value="Clear" onClick="clearForm()" id='clear'/>
+      </td>
+      <td class="saveAndQuit effectButton">
+          <input class="button" type="button" value="Preview" id='preview' onClick="previews()"/>
+      </td>
+    <td class="saveAndQuit effectButton">
+          <input class="button" type="button" value="Save" id='save' data-toggle="modal" data-target="#myModalSave"/>
+      </td>
+      <td class="saveAndQuit effectButton">
+        <input class="button" type="button" value="Add Question" onClick="addQuestions();" id='addQuestion'/>
+      </td>
+    </tr>
+  </table>
+  </form>
+</div>
+<textarea name="exerciseSource" ID="exerciseSource" hidden rows=50 cols=180 ></textarea>
+
+<!-- In this container, the user can click on a "help" button that will open a modal which includes information on the feature -->
+  <div class="helpButton">
+    <input type="button" class="iconFont" value="help_outline" id="help" onClick="helpBtn();"/>
+  </div>
+<div class="container">
+
+
+<!-- This modal is opened when the "Save" button is clicked. It includes two buttons - the "Online" button to save the exercise on the dashboard, and the "Offline" button to save the exercise as an html file on the user's computer -->
+<div id="myModalSave" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Save</h2>
+    </div>
+    <div class="modal-body">
+         <p><b>Would you like to save the created exercise online or offline?</b></p>
+         <p><i>Note: If saving online, your exercise can be accessed from the dashboard</i></p>
+         <div class="buttonsTable">
+         <table class="buttonsSaving">
+           <tr>
+             <td class="empty">
+             </td>
+             <td class="empty">
+             </td>
+             <td class="empty">
+             </td>
+            <td class="effectButton savingButtons">
+             <input type="button" class="btn btn-default button" data-dismiss="modal" onClick="writeExercise(numberOfQuestions, true);saveTextAsFileOnline();" value="Online"/>
+             </td>
+            <td class="effectButton savingButtons">
+              <input type="button" class="btn btn-default button" data-dismiss="modal" onClick="writeExercise(numberOfQuestions, false);saveTextAsFileOffline();" value="Offline"/>
+            </td>
+           </tr>
+        </table>
+        </div>
+       </div>
+    <div class="modal-footer">
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- This modal is opened when clicking on the "help" button. It includes texts that explains how to create a hangman game and how a person answers the questions this type of exercise includes -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2>Hangman - Help</h2>
+    </div>
+    <div class="modal-body">
+      <p>The Hangman feature allows the user to create a hangman game. Creators can enter a word and users try to guess it by clicking on buttons corresponding to each letter of the English alphabet. If the word to guess includes non-English characters, their English equivalent should be selected. The user has six chances to guess the word before they lose and the answer is revealed. The feature includes automatic scoring and will tell the student how many questions they answered correctly out of all questions in the exercise on the results page. To create a hangman game, enter a title, question and word to be guessed. You can also enter a hint and feedback. Save the game and click on preview to test it. Every time a letter is clicked the colour will change to indicate that the letter has already been guessed. If the word contains multiple instances of the same letter, then all will be counted in the first click and will show in the word. If the letter is incorrect you will lose a chance and the image of the hangman will have another piece added to it. If there are no chances remaining, then then user loses. Upon creating the quiz, you can save the quiz and share it with other users. If you want to try the exercise out as a user, then click on the Preview button or save it online and open it on your Dashboard. This allows you to test it out and see how the finished exercise will run.</p>
+
+    </div>
+    <div class="modal-footer">
+
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript" src="js/modal.js"></script>
+	<!-- Contact bar for the bottom of the page. Includes links to both the About and Contact Us pages -->
+    <div class="contactBar">
+      <table class="contactTable">
+        <tr>
+          <td id="KCL">King&#39s&nbspCollege&nbspLondon&nbspModern&nbspLanguage&nbspCentre</td>
+          <td>
+            <table>
+              <tr>
+                <td id="About">
+                  <input type="button" value="About" class="navBarElementNormal"/>
+                </td>
+                <td id="Contact">
+                  <input type="button" value="Contact Us" class="navBarElementNormal"/>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+<!-- This modal is used to display information to the user that is creating the quiz. These may include, for instance, reminders to add a title to the quiz if the user forgot to do so -->
+<div id="myModal1" class="modal1">
+
+  <div class="modal-content1">
+    <div class="modal-header1">
+      <span class="close1">&times;</span>
+      <h3 id='modalText'></h3>
+    </div>
+  </div>
+ <script type="text/javascript" src="js/modal.js"></script>
+ <script type='text/javascript' src='https://belooga.000webhostapp.com/js/modal.js'></script>
+ <script type='text/javascript' src='js/hangman.js'></script>
+ <script type='text/javascript' src='https://belooga.000webhostapp.com/js/hangman.js'></script>
+ <script type="text/javascript" src="js/commonLinks.js"></script>
+ <script type='text/javascript' src='https://belooga.000webhostapp.com/js/commonLinks.js'></script>
+ <script type="text/javascript" src="js/commonSignedIn.js"></script>
+  </body>
+</html>
